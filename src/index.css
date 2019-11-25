@@ -1,0 +1,30 @@
+​html {
+  box-sizing: border-box;
+}
+
+​*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+​img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+a:focus,
+button:focus {
+  outline: none;
+}
