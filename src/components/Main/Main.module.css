@@ -1,6 +1,6 @@
 @value colors: '../../styles/variables.css';
 @value font: '../../styles/variables.css';
-@value primary-color, secondary-color from colors;
+@value primary-color, secondary-color, third-color from colors;
 @value primary-font-family, primary-font-weight, primary-font-size, secondary-font-size from font;
 
 .main {
@@ -18,14 +18,19 @@
 }
 
 .logo {
+  font-size: 1.875rem; /* 30px */
+  background: linear-gradient(to right, third-color 0%, primary-color 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: primary-color;
+  display: table;
   font-family: primary-font-family;
   font-weight: primary-font-weight;
-  font-size: primary-font-size;
   margin-left: 1em;
 }
 
 .nav {
+  font-size: 1.25rem; /* 20px */
   width: 100%;
   display: grid;
   grid: 1fr / repeat(3, 1fr);
@@ -33,7 +38,6 @@
   place-items: center center;
   color: primary-color;
   font-family: primary-font-family;
-  font-size: secondary-font-size;
 }
 
 .navItem > a {

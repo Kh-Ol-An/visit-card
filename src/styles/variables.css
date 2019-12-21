@@ -1,7 +1,8 @@
 @value primary-color: #03adec;
 @value secondary-color: #012065;
+@value third-color: #01286D;
 
 @value primary-font-family: "Hack", sans-serif;
 @value primary-font-weight: 900;
-@value primary-font-size: 30px;
-@value secondary-font-size: 20px;
+/* @value primary-font-size: 30px;
+@value secondary-font-size: 20px; */
