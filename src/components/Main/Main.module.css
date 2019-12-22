@@ -1,20 +1,25 @@
 @value colors: '../../styles/variables.css';
 @value font: '../../styles/variables.css';
 @value primary-color, secondary-color, third-color from colors;
-@value primary-font-family, primary-font-weight, primary-font-size, secondary-font-size from font;
+@value primary-family, primary-weight from font;
 
 .main {
-  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../images/img/bg-img.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  background-size: contain;
+  background-color: #000;
 }
 
 .header {
   width: 100%;
-  height: 4rem;
-  position: absolute;
-  display: grid;
-  grid: 1fr / repeat(2, 1fr);
-  place-content: center spase-between;
-  place-items: center start;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
 }
 
 .logo {
@@ -24,27 +29,22 @@
   -webkit-text-fill-color: transparent;
   color: primary-color;
   display: table;
-  font-family: primary-font-family;
-  font-weight: primary-font-weight;
-  margin-left: 1em;
+  font-family: primary-family;
+  font-weight: primary-weight;
 }
 
 .nav {
   font-size: 1.25rem; /* 20px */
-  width: 100%;
-  display: grid;
-  grid: 1fr / repeat(3, 1fr);
-  place-content: center spase-between;
-  place-items: center center;
+  display: flex;
+  align-items: center;
   color: primary-color;
-  font-family: primary-font-family;
+  font-family: primary-family;
+}
+
+.navItem:not(:last-child) {
+  margin-right: 3em;
 }
 
 .navItem > a {
   color: primary-color;
-}
-
-.bgImg {
-  width: 100%;
-  height: 100vh;
 }
