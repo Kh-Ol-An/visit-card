@@ -1,6 +1,10 @@
-​html {
+html {
   font-size: 16px;
   box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
 }
 
 ​*,
@@ -29,3 +33,28 @@ a:focus,
 button:focus {
   outline: none;
 }
+
+/*
+*  SCROLLBAR
+*/
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar:horizontal {
+  width: unset;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+/*
+*  SCROLLBAR
+*/

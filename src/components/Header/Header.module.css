@@ -1,0 +1,41 @@
+/* stylelint-disable-next-line */
+@value colors: '../../styles/variables.css';
+@value fonts: '../../styles/variables.css';
+@value primary-color, secondary-color, third-color from colors;
+@value primary-family, primary-weight from fonts;
+
+.header {
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+}
+
+.logo {
+  font-size: 1.875rem; /* 30px */
+  background: linear-gradient(to right, third-color 0%, primary-color 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: primary-color;
+  display: table;
+  font-family: primary-family;
+  font-weight: primary-weight;
+}
+
+.nav {
+  font-size: 1.25rem; /* 20px */
+  display: flex;
+  align-items: center;
+  color: primary-color;
+  font-family: primary-family;
+  list-style: none;
+}
+
+.navItem:not(:last-child) {
+  margin-right: 3em;
+}
+
+.navItem > a {
+  color: primary-color;
+}

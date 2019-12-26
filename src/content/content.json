@@ -1,8 +1,32 @@
 {
-  "logo": "<KhOlAn/>",
-  "nav": {
-    "main": "<Main/>",
-    "cv": "<Abaut me/>",
-    "contacts": "<Contacts/>"
+  "en": {
+    "lang": "en",
+    "logo": "<KhOlAn />",
+    "nav": {
+      "main": "<Main />",
+      "cv": "<CV />",
+      "me": "<Who am I? />",
+      "contacts": "<Contacts />"
+    }
+  },
+  "ua": {
+    "lang": "ua",
+    "logo": "<ХОлАн />",
+    "nav": {
+      "main": "<Головна />",
+      "cv": "<Резюме />",
+      "me": "<Хто я? />",
+      "contacts": "<Контакти />"
+    }
+  },
+  "ru": {
+    "lang": "ru",
+    "logo": "<ХОлАн />",
+    "nav": {
+      "main": "<Главная />",
+      "cv": "<Резюме />",
+      "me": "<Кто я? />",
+      "contacts": "<Контакты />"
+    }
   }
 }
