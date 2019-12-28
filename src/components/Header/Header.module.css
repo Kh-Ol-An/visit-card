@@ -1,4 +1,3 @@
-/* stylelint-disable-next-line */
 @value colors: '../../styles/variables.css';
 @value fonts: '../../styles/variables.css';
 @value primary-color, secondary-color, third-color from colors;
@@ -9,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em 2em;
+  padding: 1em 10em 1em 2em;
 }
 
 .logo {

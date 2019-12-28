@@ -1,22 +1,17 @@
-import React, { useRef } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import PropTypes from 'prop-types';
 
-import multiContent from '../../content/content.json';
+import getContent from '../../redux/content/contentSelectors';
 import s from './Header.module.css';
 
-const Header = () => {
-  const select = useRef();
-  console.log('select', select);
-  // const content = {};
-  const content = multiContent.en;
-
-  // select.value === 'Русский' && ru = multiContent.ru;
-
+const Header = ({ content }) => {
   return (
     <header className={s.header}>
       <Helmet>
-        <html lang="ru" />
+        <html lang={content.lang} />
       </Helmet>
 
       <Link className={s.logo} to="/">
@@ -34,14 +29,25 @@ const Header = () => {
           <Link to="/contacts">{content.nav.contacts}</Link>
         </li>
       </ul>
-
-      <select className={s.navLang} ref={select}>
-        <option className={s.navItemLang}>English</option>
-        <option className={s.navItemLang}>Русский</option>
-        <option className={s.navItemLang}>Українська</option>
-      </select>
     </header>
   );
 };
 
-export default Header;
+Header.propTypes = {
+  content: PropTypes.shape({
+    lang: PropTypes.string.isRequired,
+    logo: PropTypes.string.isRequired,
+    nav: PropTypes.shape({
+      main: PropTypes.string.isRequired,
+      cv: PropTypes.string.isRequired,
+      me: PropTypes.string.isRequired,
+      contacts: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
+
+const mapStateToProps = store => ({
+  content: getContent(store),
+});
+
+export default connect(mapStateToProps)(Header);

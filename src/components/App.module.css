@@ -1,0 +1,14 @@
+@value colors: '../styles/variables.css';
+@value fonts: '../styles/variables.css';
+@value primary-color, secondary-color, third-color from colors;
+@value primary-family, primary-weight from fonts;
+
+.selectLang {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  border-width: 0;
+  background-color: transparent;
+  color: primary-color;
+  font-family: primary-family;
+}
