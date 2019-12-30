@@ -3,12 +3,53 @@
 @value primary-color, secondary-color, third-color from colors;
 @value primary-family, primary-weight from fonts;
 
-.selectLang {
+.selectWrap {
+  width: 130px;
   position: absolute;
-  top: 1em;
+  top: 1.375em;
   right: 1em;
+}
+
+.selectLang {
+  width: 100%;
   border-width: 0;
   background-color: transparent;
   color: primary-color;
   font-family: primary-family;
+}
+
+.flag {
+  width: 48px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.en {
+  background-image: url("../images/flag/uk.png");
+}
+
+.selectWrap:hover .en {
+  background-image: url("../images/flag/uk.gif");
+}
+
+.ua {
+  background-image: url("../images/flag/ua.png");
+}
+
+.selectWrap:hover .ua {
+  background-image: url("../images/flag/ua.gif");
+}
+
+.ru {
+  background-image: url("../images/flag/ru.png");
+}
+
+.selectWrap:hover .ru {
+  background-image: url("../images/flag/ru.gif");
 }

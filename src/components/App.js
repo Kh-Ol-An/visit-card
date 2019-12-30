@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -10,28 +10,47 @@ import { content } from '../redux/content/contentActions';
 import s from './App.module.css';
 
 function App({ enterContent }) {
+  const [lang, setLang] = useState('en');
   enterContent(multiContent.en);
+  // if (lang === 'en') enterContent(multiContent.en);
+  // else if (lang === 'ua') enterContent(multiContent.ua);
+  // else if (lang === 'ru') enterContent(multiContent.ru);
+
+  useEffect(() => {
+    if (lang === 'en') enterContent(multiContent.en);
+    else if (lang === 'ua') enterContent(multiContent.ua);
+    else if (lang === 'ru') enterContent(multiContent.ru);
+  });
 
   function handleChange({ target }) {
     const { value } = target;
-    if (value === 'en') enterContent(multiContent.en);
-    else if (value === 'ua') enterContent(multiContent.ua);
-    else if (value === 'ru') enterContent(multiContent.ru);
+    setLang(value);
+    // if (value === 'en') enterContent(multiContent.en);
+    // else if (value === 'ua') enterContent(multiContent.ua);
+    // else if (value === 'ru') enterContent(multiContent.ru);
   }
+
+  const flagClasses = [s.flag];
+  if (lang === 'en') flagClasses.push(s.en);
+  else if (lang === 'ua') flagClasses.push(s.ua);
+  else if (lang === 'ru') flagClasses.push(s.ru);
 
   return (
     <>
-      <select className={s.selectLang} onChange={handleChange}>
-        <option className={s.optionLang} value="en">
-          English
-        </option>
-        <option className={s.optionLang} value="ua">
-          Українська
-        </option>
-        <option className={s.optionLang} value="ru">
-          Русский
-        </option>
-      </select>
+      <div className={s.selectWrap}>
+        <select className={s.selectLang} onChange={handleChange}>
+          <option className={s.optionLang} value="en">
+            English
+          </option>
+          <option className={s.optionLang} value="ua">
+            Українська
+          </option>
+          <option className={s.optionLang} value="ru">
+            Русский
+          </option>
+        </select>
+        <div className={flagClasses.join(' ')} />
+      </div>
 
       <Switch>
         <Route exact path="/" component={Main} />
