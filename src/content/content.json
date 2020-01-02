@@ -1,5 +1,6 @@
-{
-  "en": {
+[
+  {
+    "language": "English",
     "lang": "en",
     "logo": "<KhOlAn />",
     "nav": {
@@ -9,7 +10,8 @@
       "contacts": "<Contacts />"
     }
   },
-  "ua": {
+  {
+    "language": "Українська",
     "lang": "ua",
     "logo": "<KhOlAn />",
     "nav": {
@@ -19,7 +21,8 @@
       "contacts": "<Контакти />"
     }
   },
-  "ru": {
+  {
+    "language": "Русский",
     "lang": "ru",
     "logo": "<KhOlAn />",
     "nav": {
@@ -29,4 +32,4 @@
       "contacts": "<Контакты />"
     }
   }
-}
+]

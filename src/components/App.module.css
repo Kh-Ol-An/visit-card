@@ -3,38 +3,69 @@
 @value primary-color, secondary-color, third-color from colors;
 @value primary-family, primary-weight from fonts;
 
-.selectWrap {
-  width: 130px;
+.langWrap {
   position: absolute;
-  top: 1.375em;
+  top: 0.875em;
   right: 1em;
 }
 
-.selectLang {
-  width: 100%;
-  border-width: 0;
-  background-color: transparent;
-  color: primary-color;
-  font-family: primary-family;
-}
-
-.flag {
-  width: 48px;
-  height: 100%;
+.label {
   position: absolute;
   top: 0;
   right: 0;
-  display: inline-block;
+  color: primary-color;
+  font-family: primary-family;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.label > input {
+  display: none;
+}
+
+:global(.disable1),
+:global(.disable2) {
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+
+:global(.disable1) {
+  top: 1.5625em;
+  transform: translateY(-1.5625em);
+}
+
+:global(.disable2) {
+  top: 3.125em;
+  transform: translateY(-3.125em);
+}
+
+.langWrap:hover :global(.disable1),
+.langWrap:hover :global(.disable2) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flag {
+  width: 2.375em;
+  height: 1em;
+  position: absolute;
+  top: 0.5625em;
+  left: -2.625em;
+  display: none;
   background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
+}
+
+.enable > .flag {
+  display: inline-block;
 }
 
 .en {
   background-image: url("../images/flag/uk.png");
 }
 
-.selectWrap:hover .en {
+.langWrap:hover .en {
   background-image: url("../images/flag/uk.gif");
 }
 
@@ -42,7 +73,7 @@
   background-image: url("../images/flag/ua.png");
 }
 
-.selectWrap:hover .ua {
+.langWrap:hover .ua {
   background-image: url("../images/flag/ua.gif");
 }
 
@@ -50,6 +81,6 @@
   background-image: url("../images/flag/ru.png");
 }
 
-.selectWrap:hover .ru {
+.langWrap:hover .ru {
   background-image: url("../images/flag/ru.gif");
 }

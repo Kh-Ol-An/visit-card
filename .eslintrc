@@ -25,6 +25,8 @@
     "jest": true
   },
   "rules": {
+    "no-unused-expressions": 0,
+    "no-plusplus": "off",
     "no-console": 1,
     "linebreak-style": [0, "error", "windows"],
     "react/jsx-filename-extension": [

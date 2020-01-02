@@ -3,57 +3,75 @@ import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import multiContent from '../content/content.json';
+import multiContents from '../content/content.json';
 import Main from './Main/Main';
+import CV from './CV/CV';
 import Contacts from './Contacts/Contacts';
 import { content } from '../redux/content/contentActions';
 import s from './App.module.css';
 
 function App({ enterContent }) {
-  const [lang, setLang] = useState('en');
-  enterContent(multiContent.en);
-  // if (lang === 'en') enterContent(multiContent.en);
-  // else if (lang === 'ua') enterContent(multiContent.ua);
-  // else if (lang === 'ru') enterContent(multiContent.ru);
+  const [lang, setLang] = useState(null);
+  const localLang = localStorage.getItem('lang');
+  const flagClasses = [s.flag];
+  (!lang || lang === 'en') && flagClasses.push(s.en);
+  lang === 'ua' && flagClasses.push(s.ua);
+  lang === 'ru' && flagClasses.push(s.ru);
+  let counter = 1;
 
-  useEffect(() => {
-    if (lang === 'en') enterContent(multiContent.en);
-    else if (lang === 'ua') enterContent(multiContent.ua);
-    else if (lang === 'ru') enterContent(multiContent.ru);
-  });
+  if (!localLang) {
+    localStorage.setItem('lang', 'en');
+    setLang('en');
+    enterContent(multiContents[0]);
+  } else {
+    multiContents.map(
+      multiContent =>
+        localLang === multiContent.lang && enterContent(multiContent),
+    );
+  }
 
   function handleChange({ target }) {
     const { value } = target;
     setLang(value);
-    // if (value === 'en') enterContent(multiContent.en);
-    // else if (value === 'ua') enterContent(multiContent.ua);
-    // else if (value === 'ru') enterContent(multiContent.ru);
+    localStorage.setItem('lang', value);
   }
 
-  const flagClasses = [s.flag];
-  if (lang === 'en') flagClasses.push(s.en);
-  else if (lang === 'ua') flagClasses.push(s.ua);
-  else if (lang === 'ru') flagClasses.push(s.ru);
+  useEffect(() => {
+    setLang(localLang);
+    multiContents.map(
+      multiContent => lang === multiContent.lang && enterContent(multiContent),
+    );
+  });
 
   return (
     <>
-      <div className={s.selectWrap}>
-        <select className={s.selectLang} onChange={handleChange}>
-          <option className={s.optionLang} value="en">
-            English
-          </option>
-          <option className={s.optionLang} value="ua">
-            Українська
-          </option>
-          <option className={s.optionLang} value="ru">
-            Русский
-          </option>
-        </select>
-        <div className={flagClasses.join(' ')} />
+      <div className={s.langWrap}>
+        {multiContents.map(multiContent => {
+          const labelClasses = [s.label];
+          const disable = 'disable';
+          lang === multiContent.lang && labelClasses.push(s.enable);
+          lang !== multiContent.lang &&
+            labelClasses.push((s.disable = disable + counter)) &&
+            counter++;
+          return (
+            <label className={labelClasses.join(' ')} key={multiContent.lang}>
+              <input
+                type="radio"
+                name="language"
+                value={multiContent.lang}
+                checked={lang === multiContent.lang}
+                onChange={handleChange}
+              />
+              {multiContent.language}
+              <div className={flagClasses.join(' ')} />
+            </label>
+          );
+        })}
       </div>
 
       <Switch>
         <Route exact path="/" component={Main} />
+        <Route exact path="/cv" component={CV} />
         <Route exact path="/contacts" component={Contacts} />
       </Switch>
     </>

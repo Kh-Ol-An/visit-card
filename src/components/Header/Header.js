@@ -8,6 +8,7 @@ import getContent from '../../redux/content/contentSelectors';
 import s from './Header.module.css';
 
 const Header = ({ content }) => {
+  // console.log('content', content);
   return (
     <header className={s.header}>
       <Helmet>
