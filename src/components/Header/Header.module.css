@@ -3,13 +3,14 @@
 @value primary-color, secondary-color, third-color from colors;
 @value primary-family, primary-weight from fonts;
 
-.header {
+.main {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1em 15em 1em 2em;
-  /* opacity: 0.7; */
   background-color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 1;
 }
 
 .logo {

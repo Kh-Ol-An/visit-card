@@ -10,7 +10,7 @@ import s from './Header.module.css';
 const Header = ({ content }) => {
   // console.log('content', content);
   return (
-    <header className={s.header}>
+    <header className={s.main}>
       <Helmet>
         <html lang={content.lang} />
       </Helmet>

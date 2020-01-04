@@ -5,7 +5,7 @@ import s from './Contacts.module.css';
 
 const Contacts = () => {
   return (
-    <div className={s.contacts}>
+    <div className={s.main}>
       <Header />
     </div>
   );
