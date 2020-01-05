@@ -1,5 +1,5 @@
-@value colors: '../styles/variables.css';
-@value fonts: '../styles/variables.css';
+@value colors: '../../styles/variables.css';
+@value fonts: '../../styles/variables.css';
 @value primary-color, secondary-color, third-color from colors;
 @value primary-family, primary-weight from fonts;
 
@@ -14,14 +14,15 @@
   position: absolute;
   top: 0;
   right: 0;
+  /* background-color: rgba(0, 0, 0, 0.7); */
   color: primary-color;
   font-family: primary-family;
   padding: 10px 0;
   cursor: pointer;
 }
 
-.label > input {
-  display: none;
+.enable {
+  z-index: 1;
 }
 
 :global(.disable1),
@@ -46,6 +47,10 @@
   transform: translateY(0);
 }
 
+.label > input {
+  display: none;
+}
+
 .flag {
   width: 2.375em;
   height: 1em;
@@ -63,25 +68,25 @@
 }
 
 .en {
-  background-image: url("../images/flag/uk.png");
+  background-image: url("../../images/flag/uk.png");
 }
 
 .langWrap:hover .en {
-  background-image: url("../images/flag/uk.gif");
+  background-image: url("../../images/flag/uk.gif");
 }
 
 .ua {
-  background-image: url("../images/flag/ua.png");
+  background-image: url("../../images/flag/ua.png");
 }
 
 .langWrap:hover .ua {
-  background-image: url("../images/flag/ua.gif");
+  background-image: url("../../images/flag/ua.gif");
 }
 
 .ru {
-  background-image: url("../images/flag/ru.png");
+  background-image: url("../../images/flag/ru.png");
 }
 
 .langWrap:hover .ru {
-  background-image: url("../images/flag/ru.gif");
+  background-image: url("../../images/flag/ru.gif");
 }

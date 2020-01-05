@@ -1,6 +1,6 @@
 .main {
   height: 100vh;
-  background-image: url("../../images/bg/contacts-bg-img.jpg");
+  background-image: url('../../images/bg/contacts-bg-img.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
