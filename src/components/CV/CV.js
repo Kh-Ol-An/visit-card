@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -12,6 +12,13 @@ import s from './CV.module.css';
 
 const CV = ({ content }) => {
   const [cv, setCv] = useState(null);
+  const refCvWrap = useRef(null);
+  const widthrefCvWrap = refCvWrap.current ? refCvWrap.current.clientWidth : 0;
+  const heightrefCvWrap = refCvWrap.current
+    ? refCvWrap.current.offsetHeight
+    : 0;
+  console.log('widthrefCvWrap', widthrefCvWrap);
+  console.log('heightrefCvWrap', heightrefCvWrap);
 
   useEffect(() => {
     content.lang === 'en' && setCv(cvEN);
@@ -24,8 +31,15 @@ const CV = ({ content }) => {
       <Header />
 
       <div className={s.tabletWrap}>
+        <div
+          className={s.btn}
+          style={{
+            width: `${widthrefCvWrap}px`,
+            height: `${heightrefCvWrap}px`,
+          }}
+        />
         <img className={s.tablet} src={tablet} alt="tablet" width="4608" />
-        <div className={s.cvWrap}>
+        <div className={s.cvWrap} ref={refCvWrap}>
           <img className={s.cv} src={cv} alt="resume" width="1414" />
         </div>
       </div>

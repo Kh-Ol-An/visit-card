@@ -4,7 +4,7 @@
 @value primary-family, primary-weight from fonts;
 
 .langWrap {
-  position: absolute;
+  position: fixed;
   top: 0.875em;
   right: 1em;
   z-index: 2;
@@ -14,7 +14,6 @@
   position: absolute;
   top: 0;
   right: 0;
-  /* background-color: rgba(0, 0, 0, 0.7); */
   color: primary-color;
   font-family: primary-family;
   padding: 10px 0;

@@ -1,7 +1,78 @@
+@value fonts: '../../styles/variables.css';
+@value primary-family, primary-weight from fonts;
+
 .main {
   height: 100vh;
-  background-image: url('../../images/bg/contacts-bg-img.jpg');
+  position: relative;
+  background-image: url("../../images/bg/contacts-bg-img1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.main img {
+  margin-right: 0.625em;
+}
+
+.phone,
+.telegram,
+.viber,
+.whatsapp,
+.skype,
+.mail,
+.github,
+.linkedin {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: primary-family;
+}
+
+.phone {
+  top: 20%;
+  left: 10%;
+  color: #fff;
+}
+
+.telegram {
+  top: 30%;
+  left: 10%;
+  color: #28a4d8;
+}
+
+.viber {
+  top: 40%;
+  left: 10%;
+  color: #9069ae;
+}
+
+.whatsapp {
+  top: 50%;
+  left: 10%;
+  color: #118e08;
+}
+
+.skype {
+  top: 20%;
+  left: 80%;
+  color: #23a9eb;
+}
+
+.mail {
+  top: 30%;
+  left: 80%;
+  color: #d54440;
+}
+
+.github {
+  top: 40%;
+  left: 80%;
+  color: #fff;
+}
+
+.linkedin {
+  top: 50%;
+  left: 80%;
+  color: #005884;
 }

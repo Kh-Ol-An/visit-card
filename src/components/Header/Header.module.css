@@ -4,12 +4,17 @@
 @value primary-family, primary-weight from fonts;
 
 .main {
+  box-sizing: border-box;
+  width: 100%;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1em 15em 1em 2em;
   background-color: rgba(0, 0, 0, 0.7);
-  position: relative;
   z-index: 1;
 }
 
