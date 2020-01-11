@@ -1,6 +1,8 @@
 @value primary-color: #03adec;
 @value secondary-color: #012065;
-@value third-color: #01286D;
+@value active-color: #fc6213;
 
-@value primary-family: "Hack", sans-serif;
+@value primary-family: 'Baumans', cursive;
+@value logo-family: 'Salsa', cursive;
 @value primary-weight: 900;
+

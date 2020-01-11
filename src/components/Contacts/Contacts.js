@@ -4,23 +4,36 @@ import PropTypes from 'prop-types';
 
 import getContent from '../../redux/content/contentSelectors';
 import Header from '../Header/Header';
-import phone from '../../images/icon/phone.png';
-import telegram from '../../images/icon/telegram.png';
-import viber from '../../images/icon/viber.png';
-import whatsapp from '../../images/icon/whatsapp.png';
-import skype from '../../images/icon/skype.png';
-import mail from '../../images/icon/mail.png';
-import github from '../../images/icon/github.png';
-import linkedin from '../../images/icon/linkedin.png';
+import phone from '../../assets/images/icon/phone.png';
+import telegram from '../../assets/images/icon/telegram.png';
+import viber from '../../assets/images/icon/viber.png';
+import whatsapp from '../../assets/images/icon/whatsapp.png';
+import skype from '../../assets/images/icon/skype.png';
+import mail from '../../assets/images/icon/mail.png';
+import github from '../../assets/images/icon/github.png';
+import linkedin from '../../assets/images/icon/linkedin.png';
 import s from './Contacts.module.css';
 
 const Contacts = ({ content }) => {
   const [tel, setTel] = useState(null);
 
   useEffect(() => {
+    // function setTelephone() {
+    //   content.lang === 'en' && setTel('Telephone');
+    //   content.lang === 'ua' && setTel('Телефон');
+    //   content.lang === 'ru' && setTel('Телефон');
+    // }
     content.lang === 'en' && setTel('Telephone');
-    content.lang === 'ua' && setTel('Телефон');
-    content.lang === 'ru' && setTel('Телефон');
+    (content.lang === 'ua' || content.lang === 'ru') && setTel('Телефон');
+    // content.lang === 'ru' && setTel('Телефон');
+    // if (content.lang === 'en') {
+    //   setTel('Telephone');
+    // } else if (content.lang === 'ua') {
+    //   setTel('Телефон');
+    // } else if (content.lang === 'ru') {
+    //   setTel('Телефон');
+    // }
+    // setTelephone();
   });
 
   return (

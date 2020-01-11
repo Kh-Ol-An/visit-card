@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 
@@ -20,13 +20,34 @@ const Header = ({ content }) => {
 
       <ul className={s.nav}>
         <li className={s.navItem}>
-          <Link to="/">{content.nav.main}</Link>
+          <NavLink
+            className={s.link}
+            activeClassName={s.activeLink}
+            exact
+            to="/"
+          >
+            {content.nav.main}
+          </NavLink>
         </li>
         <li className={s.navItem}>
-          <Link to="/cv">{content.nav.cv}</Link>
+          <NavLink
+            className={s.link}
+            activeClassName={s.activeLink}
+            exact
+            to="/cv"
+          >
+            {content.nav.cv}
+          </NavLink>
         </li>
         <li className={s.navItem}>
-          <Link to="/contacts">{content.nav.contacts}</Link>
+          <NavLink
+            className={s.link}
+            activeClassName={s.activeLink}
+            exact
+            to="/contacts"
+          >
+            {content.nav.contacts}
+          </NavLink>
         </li>
       </ul>
     </header>

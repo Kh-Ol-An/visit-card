@@ -10,9 +10,6 @@ const Languages = ({ enterContent }) => {
   const [lang, setLang] = useState(null);
   const localLang = localStorage.getItem('lang');
   const flagClasses = [s.flag];
-  (!lang || lang === 'en') && flagClasses.push(s.en);
-  lang === 'ua' && flagClasses.push(s.ua);
-  lang === 'ru' && flagClasses.push(s.ru);
   let counter = 1;
 
   if (!localLang) {
@@ -48,6 +45,7 @@ const Languages = ({ enterContent }) => {
         lang !== multiContent.lang &&
           labelClasses.push((s.disable = disable + counter)) &&
           counter++;
+        flagClasses.splice(1, 1, s[multiContent.lang]);
         return (
           <label className={labelClasses.join(' ')} key={multiContent.lang}>
             <input
@@ -57,7 +55,7 @@ const Languages = ({ enterContent }) => {
               checked={lang === multiContent.lang}
               onChange={handleChange}
             />
-            {multiContent.language}
+            <span>{multiContent.language}</span>
             <div className={flagClasses.join(' ')} />
           </label>
         );

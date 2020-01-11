@@ -1,31 +1,30 @@
 @value colors: '../../styles/variables.css';
 @value fonts: '../../styles/variables.css';
-@value primary-color, secondary-color, third-color from colors;
-@value primary-family, primary-weight from fonts;
+@value primary-color, secondary-color, active-color from colors;
+@value primary-family, logo-family, primary-weight from fonts;
 
 .main {
   box-sizing: border-box;
   width: 100%;
-  width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em 15em 1em 2em;
+  padding: 1em 10em 1em 2em;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
 
 .logo {
   font-size: 1.875rem; /* 30px */
-  background: linear-gradient(to right, third-color 0%, primary-color 100%);
+  background: linear-gradient(to right, secondary-color 0%, primary-color 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: primary-color;
   display: table;
-  font-family: primary-family;
+  font-family: logo-family;
   font-weight: primary-weight;
   z-index: 111;
 }
@@ -43,6 +42,17 @@
   margin-right: 3em;
 }
 
-.navItem > a {
+.link {
   color: primary-color;
+}
+
+.activeLink {
+  color: active-color;
+  /* font-weight: 600; */
+}
+
+@media (max-width: 899px) {
+  .logo {
+    order: 1;
+  }
 }

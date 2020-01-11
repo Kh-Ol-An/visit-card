@@ -4,7 +4,7 @@
 .main {
   height: 100vh;
   position: relative;
-  background-image: url("../../images/bg/contacts-bg-img1.jpg");
+  background-image: url('../../assets/images/bg/contacts-bg-img.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

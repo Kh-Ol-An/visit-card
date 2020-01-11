@@ -1,13 +1,23 @@
 @value colors: '../../styles/variables.css';
 @value fonts: '../../styles/variables.css';
-@value primary-color, secondary-color, third-color from colors;
-@value primary-family, primary-weight from fonts;
+@value primary-color from colors;
+@value primary-family from fonts;
 
 .langWrap {
   position: fixed;
   top: 0.875em;
   right: 1em;
   z-index: 2;
+  background: transparent;
+  transition: background 0.3s ease-in;
+}
+
+.langWrap:hover {
+  width: 7.1875em;
+  height: 5.625em;
+  background: #000;
+  border-radius: 1em;
+  transition: background 0.3s ease-in;
 }
 
 .label {
@@ -46,46 +56,52 @@
   transform: translateY(0);
 }
 
+/* .langWrap:hover :global(.disable2) {
+  background-color: rgba(0, 0, 0, 0.7);
+} */
+
 .label > input {
   display: none;
 }
 
 .flag {
-  width: 2.375em;
+  width: 1.375em;
   height: 1em;
   position: absolute;
   top: 0.5625em;
-  left: -2.625em;
-  display: none;
+  left: -1.625em;
+  display: inline-block;
   background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
 }
 
-.enable > .flag {
-  display: inline-block;
-}
-
 .en {
-  background-image: url("../../images/flag/uk.png");
+  background-image: url("../../assets/images/flag/uk.png");
 }
 
 .langWrap:hover .en {
-  background-image: url("../../images/flag/uk.gif");
+  background-image: url("../../assets/images/flag/uk.gif");
 }
 
 .ua {
-  background-image: url("../../images/flag/ua.png");
+  background-image: url("../../assets/images/flag/ua.png");
 }
 
 .langWrap:hover .ua {
-  background-image: url("../../images/flag/ua.gif");
+  background-image: url("../../assets/images/flag/ua.gif");
 }
 
 .ru {
-  background-image: url("../../images/flag/ru.png");
+  background-image: url("../../assets/images/flag/ru.png");
 }
 
 .langWrap:hover .ru {
-  background-image: url("../../images/flag/ru.gif");
+  background-image: url("../../assets/images/flag/ru.gif");
+}
+
+@media (max-width: 899px) {
+  .label > span {
+    display: none;
+  }
 }

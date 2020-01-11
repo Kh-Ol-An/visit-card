@@ -2,7 +2,7 @@
   {
     "language": "English",
     "lang": "en",
-    "logo": "<KhOlAn />",
+    "logo": "KhOlAn",
     "nav": {
       "main": "<Main />",
       "cv": "<CV />",
@@ -13,7 +13,7 @@
   {
     "language": "Українська",
     "lang": "ua",
-    "logo": "<KhOlAn />",
+    "logo": "KhOlAn",
     "nav": {
       "main": "<Головна />",
       "cv": "<Резюме />",
@@ -24,7 +24,7 @@
   {
     "language": "Русский",
     "lang": "ru",
-    "logo": "<KhOlAn />",
+    "logo": "KhOlAn",
     "nav": {
       "main": "<Главная />",
       "cv": "<Резюме />",
