@@ -57,7 +57,7 @@ const CV = ({ content }) => {
     content.lang === 'en' && setCv(cvEN);
     content.lang === 'ua' && setCv(cvUA);
     content.lang === 'ru' && setCv(cvRU);
-  });
+  }, [content.lang]);
 
   return (
     <div

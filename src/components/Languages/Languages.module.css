@@ -8,16 +8,10 @@
   top: 0.875em;
   right: 1em;
   z-index: 2;
-  background: transparent;
-  transition: background 0.3s ease-in;
 }
 
-.langWrap:hover {
-  width: 7.1875em;
-  height: 5.625em;
-  background: #000;
-  border-radius: 1em;
-  transition: background 0.3s ease-in;
+.langWrap:hover ~ a {
+  padding-bottom: 1.6em;
 }
 
 .label {
@@ -55,10 +49,6 @@
   opacity: 1;
   transform: translateY(0);
 }
-
-/* .langWrap:hover :global(.disable2) {
-  background-color: rgba(0, 0, 0, 0.7);
-} */
 
 .label > input {
   display: none;

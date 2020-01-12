@@ -11,7 +11,7 @@
   left: 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 1em 10em 1em 2em;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
@@ -19,18 +19,83 @@
 
 .logo {
   font-size: 1.875rem; /* 30px */
+  line-height: 1.17em;
   background: linear-gradient(to right, secondary-color 0%, primary-color 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: primary-color;
-  display: table;
   font-family: logo-family;
   font-weight: primary-weight;
   z-index: 111;
+  margin-top: -5px;
+  transition: all 0.3s ease-in;
+}
+
+.check {
+  display: none;
+}
+
+.check:checked ~ .nav {
+  height: 90px;
+  margin-top: 15px;
+  opacity: 1;
+}
+
+.check:checked ~ .nav > .navItem {
+  pointer-events: unset;
+}
+
+.lineWrap {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  display: none;
+  margin-top: 5px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.line1::before,
+.line2::before,
+.line3::before {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  content: "";
+  display: block;
+  background-color: #fff;
+  transition: all 0.3s ease-in;
+}
+
+.line1::before {
+  top: 0;
+}
+
+.line2::before {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.line3::before {
+  bottom: 0;
+}
+
+.check:checked ~ .lineWrap > .line1::before {
+  transform: translate(0%, 450%) rotate(-45deg);
+}
+
+.check:checked ~ .lineWrap > .line2::before {
+  transform: rotate(45deg);
+}
+
+.check:checked ~ .lineWrap > .line3::before {
+  transform: translate(0%, -450%) rotate(-45deg);
 }
 
 .nav {
   font-size: 1.25rem; /* 20px */
+  line-height: 1.5em;
   display: flex;
   align-items: center;
   color: primary-color;
@@ -44,7 +109,29 @@
 
 .link {
   color: primary-color;
+  transition: color 0.3s ease-in;
+  /* background: transparent; */
 }
+
+.navItem:hover > .link {
+  color: active-color;
+  /* animation: linkHover 3s; */
+  /* background: linear-gradient(to left, active-color 0%, primary-color 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  /* transition: all 3s ease-in; */
+}
+
+/* @keyframes linkHover {
+  from {
+    color: primary-color;
+  }
+  to {
+    background: linear-gradient(to left, active-color 0%, primary-color 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+} */
 
 .activeLink {
   color: active-color;
@@ -54,5 +141,22 @@
 @media (max-width: 899px) {
   .logo {
     order: 1;
+    margin: 0 auto;
+  }
+
+  .lineWrap {
+    display: block;
+  }
+
+  .nav {
+    height: 0;
+    flex-flow: column;
+    align-items: flex-start;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+  }
+
+  .navItem {
+    pointer-events: none;
   }
 }

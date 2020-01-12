@@ -18,23 +18,9 @@ const Contacts = ({ content }) => {
   const [tel, setTel] = useState(null);
 
   useEffect(() => {
-    // function setTelephone() {
-    //   content.lang === 'en' && setTel('Telephone');
-    //   content.lang === 'ua' && setTel('Телефон');
-    //   content.lang === 'ru' && setTel('Телефон');
-    // }
     content.lang === 'en' && setTel('Telephone');
     (content.lang === 'ua' || content.lang === 'ru') && setTel('Телефон');
-    // content.lang === 'ru' && setTel('Телефон');
-    // if (content.lang === 'en') {
-    //   setTel('Telephone');
-    // } else if (content.lang === 'ua') {
-    //   setTel('Телефон');
-    // } else if (content.lang === 'ru') {
-    //   setTel('Телефон');
-    // }
-    // setTelephone();
-  });
+  }, [content.lang]);
 
   return (
     <div className={s.main}>

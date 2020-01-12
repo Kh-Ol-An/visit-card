@@ -31,10 +31,13 @@ const Languages = ({ enterContent }) => {
 
   useEffect(() => {
     setLang(localLang);
+  }, [localLang]);
+
+  useEffect(() => {
     multiContents.map(
       multiContent => lang === multiContent.lang && enterContent(multiContent),
     );
-  });
+  }, [lang, enterContent]);
 
   return (
     <div className={s.langWrap}>
