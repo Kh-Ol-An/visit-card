@@ -16,6 +16,7 @@ const CV = ({ content }) => {
   const [tabletWrapClasses, setTabletWrapClasses] = useState([s.tabletWrap]);
 
   const disactive = () => {
+    if (cvWrapClasses.length === 1 && tabletWrapClasses.length === 1) return;
     const cvWrapArray = cvWrapClasses.split(' ');
     cvWrapArray.pop();
     setCvWrapClasses(cvWrapArray);
@@ -26,7 +27,7 @@ const CV = ({ content }) => {
   };
 
   function handleKeyPress({ keyCode }) {
-    if (cvWrapClasses.length === 1 && tabletWrapClasses.length === 1) return;
+    // if (cvWrapClasses.length === 1 && tabletWrapClasses.length === 1) return;
     if (keyCode !== 27) return;
     disactive();
   }

@@ -22,6 +22,12 @@ const Contacts = ({ content }) => {
     (content.lang === 'ua' || content.lang === 'ru') && setTel('Телефон');
   }, [content.lang]);
 
+  const isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(
+    navigator.userAgent,
+  );
+
+  // console.log('navigator', isMobile);
+
   return (
     <div className={s.main}>
       <Header />
@@ -41,20 +47,40 @@ const Contacts = ({ content }) => {
       </a>
 
       {/* VIBER НА ПК */}
-      <a
+      {isMobile ? (
+        <a
+          className={s.viber}
+          title="Viber"
+          href="viber://add?number=+380508899268"
+        >
+          <img src={viber} alt="viber-icon" width="50" />
+          Viber
+        </a>
+      ) : (
+        <a
+          className={s.viber}
+          title="Viber"
+          href="viber://chat?number=+380508899268"
+        >
+          <img src={viber} alt="viber-icon" width="50" />
+          Viber
+        </a>
+      )}
+      {/* <a
         className={s.viber}
         title="Viber"
         href="viber://chat?number=+380508899268"
       >
         <img src={viber} alt="viber-icon" width="50" />
         Viber
-      </a>
+      </a> */}
       {/* VIBER НА МОБИЛЬНЫХ */}
       {/* <a
-        className={s.telegram}
+        className={s.viber}
         title="Viber"
-        href="viber://add?number=380508899268"
+        href="viber://add?number=+380508899268"
       >
+        <img src={viber} alt="viber-icon" width="50" />
         Viber
       </a> */}
 

@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 
 import store from './redux/store';
 import App from './components/App';
+import './styles/fonts.css';
 import './styles/normalize.css';
 import './styles/reset.css';
 import './styles/index.css';

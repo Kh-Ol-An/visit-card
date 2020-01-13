@@ -67,27 +67,27 @@
 }
 
 .en {
-  background-image: url("../../assets/images/flag/uk.png");
+  background-image: url('../../assets/images/flag/uk.png');
 }
 
 .langWrap:hover .en {
-  background-image: url("../../assets/images/flag/uk.gif");
+  background-image: url('../../assets/images/flag/uk.gif');
 }
 
 .ua {
-  background-image: url("../../assets/images/flag/ua.png");
+  background-image: url('../../assets/images/flag/ua.png');
 }
 
 .langWrap:hover .ua {
-  background-image: url("../../assets/images/flag/ua.gif");
+  background-image: url('../../assets/images/flag/ua.gif');
 }
 
 .ru {
-  background-image: url("../../assets/images/flag/ru.png");
+  background-image: url('../../assets/images/flag/ru.png');
 }
 
 .langWrap:hover .ru {
-  background-image: url("../../assets/images/flag/ru.gif");
+  background-image: url('../../assets/images/flag/ru.gif');
 }
 
 @media (max-width: 899px) {
