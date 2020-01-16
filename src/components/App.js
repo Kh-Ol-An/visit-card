@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
+// import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
 import getContent from '../redux/content/contentSelectors';
@@ -9,16 +10,21 @@ import multiContents from '../content/content.json';
 import Main from './Main/Main';
 import CV from './CV/CV';
 import Contacts from './Contacts/Contacts';
+// import fade from '../transition/transition.module.css';
 
 function App({ contentStore, enterContent }) {
   !contentStore && enterContent(multiContents[0]);
 
   return (
+    // <TransitionGroup>
+    //   <CSSTransition classNames={fade} timeout={300}>
     <Switch>
       <Route exact path="/" component={Main} />
       <Route exact path="/cv" component={CV} />
       <Route exact path="/contacts" component={Contacts} />
     </Switch>
+    //   </CSSTransition>
+    // </TransitionGroup>
   );
 }
 

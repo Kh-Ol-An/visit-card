@@ -4,7 +4,7 @@
 .main {
   height: 100vh;
   position: relative;
-  background-image: url("../../assets/images/bg/contacts-bg-img.jpg");
+  background-image: url('../../assets/images/bg/contacts-bg-img.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -79,8 +79,12 @@
 
 @media (max-width: 899px) {
   .main {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url("../../assets/images/bg/contacts-bg-img.jpg");
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ),
+      url('../../assets/images/bg/contacts-bg-img.jpg');
   }
 
   .skype {

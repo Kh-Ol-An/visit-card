@@ -125,7 +125,7 @@
     height: 0.125em;
     position: absolute;
     left: 0;
-    content: "";
+    content: '';
     display: block;
     background-color: #fff;
     transition: all 0.3s ease-in;
