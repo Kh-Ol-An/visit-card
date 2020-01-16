@@ -31,7 +31,7 @@
 :global(.disable1),
 :global(.disable2) {
   opacity: 0;
-  transition: all 0.3s ease-in;
+  transition: all 300ms ease-in;
 }
 
 :global(.disable1) {

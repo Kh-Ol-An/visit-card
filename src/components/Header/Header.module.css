@@ -28,7 +28,7 @@
   font-weight: primary-weight;
   margin-top: -0.1666em;
   z-index: 111;
-  transition: all 0.3s ease-in;
+  transition: all 300ms ease-in;
 }
 
 .check {
@@ -61,7 +61,7 @@
 
 .link {
   color: primary-color;
-  transition: color 0.3s ease-in;
+  transition: color 300ms ease-in;
   /* background: transparent; */
 }
 
@@ -125,10 +125,10 @@
     height: 0.125em;
     position: absolute;
     left: 0;
-    content: '';
+    content: "";
     display: block;
     background-color: #fff;
-    transition: all 0.3s ease-in;
+    transition: all 300ms ease-in;
   }
 
   .line1::before {
@@ -162,7 +162,7 @@
     flex-flow: column;
     align-items: flex-start;
     opacity: 0;
-    transition: all 0.3s ease-in;
+    transition: all 300ms ease-in;
   }
 
   .navItem {

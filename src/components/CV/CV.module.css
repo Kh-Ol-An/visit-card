@@ -1,7 +1,7 @@
 .main {
   height: 100vh;
   position: relative;
-  background-image: url("../../assets/images/bg/cv-bg-img.jpg");
+  background-image: url('../../assets/images/bg/cv-bg-img.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,7 +16,7 @@
   transform: translate(-50%, -50%);
   margin-bottom: 1em;
   overflow: hidden;
-  transition: transform 0.7s ease-in;
+  transition: transform 700ms ease-in;
 }
 
 .tabletWrapActive {
@@ -43,7 +43,7 @@
   top: 4%;
   left: -15%;
   transform: rotate3D(44, -41, 52, 66deg);
-  transition: transform 0.7s ease-in;
+  transition: transform 700ms ease-in;
   z-index: -1;
 }
 
