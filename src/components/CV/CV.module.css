@@ -1,20 +1,29 @@
 .main {
   height: 100vh;
-  position: relative;
-  background-image: url('../../assets/images/bg/cv-bg-img.jpg');
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-image: url("../../assets/images/bg/cv-bg-img.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   overflow-y: auto;
 }
 
+.tabletContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3em;
+}
+
 .tabletWrap {
-  width: 95%;
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-bottom: 1em;
+  width: 90%;
+  position: relative;
+  top: 4em;
+  margin-bottom: 4em;
   overflow: hidden;
   transition: transform 700ms ease-in;
 }
@@ -25,7 +34,7 @@
 
 .btn {
   width: 100%;
-  height: 131%;
+  height: 134%;
   position: absolute;
   top: 21%;
   left: 5%;
@@ -35,6 +44,14 @@
   margin: 0;
   background: transparent;
   cursor: pointer;
+  z-index: 2;
+}
+
+.tablet {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .cvWrap {
@@ -44,7 +61,6 @@
   left: -15%;
   transform: rotate3D(44, -41, 52, 66deg);
   transition: transform 700ms ease-in;
-  z-index: -1;
 }
 
 .cvWrapActive {
@@ -55,20 +71,7 @@
   z-index: 1;
 }
 
-.tablet {
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
 .cv {
   width: 100%;
   height: 100%;
-  z-index: -1;
-}
-
-@media (max-width: 899px) {
-  .tabletWrapActive {
-    transform: translate(-50%, -100%);
-  }
 }

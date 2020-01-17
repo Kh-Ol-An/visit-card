@@ -14,7 +14,7 @@
   align-items: flex-start;
   padding: 1em 10em 1em 2em;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
+  z-index: 2;
 }
 
 .logo {
@@ -23,7 +23,6 @@
   background: linear-gradient(to right, secondary-color 0%, primary-color 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: primary-color;
   font-family: logo-family;
   font-weight: primary-weight;
   margin-top: -0.1666em;
@@ -62,28 +61,11 @@
 .link {
   color: primary-color;
   transition: color 300ms ease-in;
-  /* background: transparent; */
 }
 
 .navItem:hover > .link {
   color: active-color;
-  /* animation: linkHover 3s; */
-  /* background: linear-gradient(to left, active-color 0%, primary-color 100%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent; */
-  /* transition: all 3s ease-in; */
 }
-
-/* @keyframes linkHover {
-  from {
-    color: primary-color;
-  }
-  to {
-    background: linear-gradient(to left, active-color 0%, primary-color 100%);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-} */
 
 .activeLink {
   color: active-color;

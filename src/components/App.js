@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { Switch, Route } from 'react-router-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
 import getContent from '../redux/content/contentSelectors';
@@ -11,26 +10,33 @@ import multiContents from '../content/content.json';
 import Main from './Main/Main';
 import CV from './CV/CV';
 import Contacts from './Contacts/Contacts';
-import fade from '../transition/transition.module.css';
+import fade from '../styles/transition/transition.module.css';
+
+const routes = [
+  { path: '/', Component: Main },
+  { path: '/cv', Component: CV },
+  { path: '/contacts', Component: Contacts },
+];
 
 function App({ contentStore, enterContent }) {
   !contentStore && enterContent(multiContents[0]);
 
   return (
     <Router>
-      <Route
-        render={({ location }) => (
-          <TransitionGroup>
-            <CSSTransition classNames={fade} key={location.key} timeout={300}>
-              <Switch>
-                <Route exact path="/" component={Main} />
-                <Route exact path="/cv" component={CV} />
-                <Route exact path="/contacts" component={Contacts} />
-              </Switch>
+      {routes.map(({ path, Component }) => (
+        <Route key={path} exact path={path}>
+          {({ match }) => (
+            <CSSTransition
+              in={match != null}
+              timeout={300}
+              classNames={fade}
+              unmountOnExit
+            >
+              <Component />
             </CSSTransition>
-          </TransitionGroup>
-        )}
-      />
+          )}
+        </Route>
+      ))}
     </Router>
   );
 }

@@ -3,7 +3,9 @@
 
 .main {
   height: 100vh;
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
   background-image: url('../../assets/images/bg/contacts-bg-img.jpg');
   background-position: center;
   background-repeat: no-repeat;

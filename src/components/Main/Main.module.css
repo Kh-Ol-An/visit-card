@@ -1,6 +1,9 @@
 .main {
   height: 100vh;
-  background-image: url('../../assets/images/bg/main-bg-img.jpg');
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-image: url("../../assets/images/bg/main-bg-img.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
