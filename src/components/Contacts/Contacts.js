@@ -14,23 +14,46 @@ import github from '../../assets/images/icon/github.png';
 import linkedin from '../../assets/images/icon/linkedin.png';
 import s from './Contacts.module.css';
 
-const Contacts = ({ content }) => {
+const Contacts = ({ contentStore }) => {
   const [tel, setTel] = useState(null);
 
   useEffect(() => {
-    content.lang === 'en' && setTel('Telephone');
-    (content.lang === 'ua' || content.lang === 'ru') && setTel('Телефон');
-  }, [content.lang]);
+    contentStore.lang === 'en' && setTel('Telephone');
+    (contentStore.lang === 'ua' || contentStore.lang === 'ru') &&
+      setTel('Телефон');
+  }, [contentStore.lang]);
 
   const isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(
     navigator.userAgent,
   );
 
-  // console.log('navigator', isMobile);
+  const [checkedHeader, setCheckedHeader] = useState(false);
+
+  function handleDisactiveChecked({ target }) {
+    !target.className.includes('Header') &&
+      !target.className.includes('Languages') &&
+      checkedHeader &&
+      setCheckedHeader(false);
+  }
+
+  function handleKeyPressChecked({ keyCode }) {
+    if (keyCode !== 27) return;
+    checkedHeader && setCheckedHeader(false);
+  }
+
+  function onCheckedHeader(checked) {
+    setCheckedHeader(checked);
+  }
 
   return (
-    <div className={s.main}>
-      <Header />
+    <div
+      className={s.main}
+      role="button"
+      tabIndex="0"
+      onClick={handleDisactiveChecked}
+      onKeyDown={handleKeyPressChecked}
+    >
+      <Header checkedHeader={checkedHeader} onCheckedHeader={onCheckedHeader} />
 
       <a className={s.phone} title="Telephone" href="tel:+380508899268">
         <img src={phone} alt="phone-icon" width="50" />
@@ -46,7 +69,7 @@ const Contacts = ({ content }) => {
         Telegram
       </a>
 
-      {/* VIBER НА ПК */}
+      {/* VIBER НА МОБИЛЬНЫЙ ИЛИ НА ПК */}
       {isMobile ? (
         <a
           className={s.viber}
@@ -66,23 +89,6 @@ const Contacts = ({ content }) => {
           Viber
         </a>
       )}
-      {/* <a
-        className={s.viber}
-        title="Viber"
-        href="viber://chat?number=+380508899268"
-      >
-        <img src={viber} alt="viber-icon" width="50" />
-        Viber
-      </a> */}
-      {/* VIBER НА МОБИЛЬНЫХ */}
-      {/* <a
-        className={s.viber}
-        title="Viber"
-        href="viber://add?number=+380508899268"
-      >
-        <img src={viber} alt="viber-icon" width="50" />
-        Viber
-      </a> */}
 
       <a
         className={s.whatsapp}
@@ -106,7 +112,7 @@ const Contacts = ({ content }) => {
       <a
         className={s.github}
         title="GitHub"
-        href="https://github.com/Kh-Ol-An"
+        href="https://github.com/Kh-Ol-An/visit-card"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -124,23 +130,18 @@ const Contacts = ({ content }) => {
         <img src={linkedin} alt="linkedin-icon" width="50" />
         Linkedin
       </a>
-
-      {/* <a className={s.website} title="To the main" href="http://kholan.tech/">
-        <img src={website} alt="website-icon" width="50" />
-        kholan.tech
-      </a> */}
     </div>
   );
 };
 
 Contacts.propTypes = {
-  content: PropTypes.shape({
+  contentStore: PropTypes.shape({
     lang: PropTypes.string.isRequired,
   }).isRequired,
 };
 
 const mapStateToProps = store => ({
-  content: getContent(store),
+  contentStore: getContent(store),
 });
 
 export default connect(mapStateToProps)(Contacts);

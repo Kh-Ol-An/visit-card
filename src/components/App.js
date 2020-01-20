@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
@@ -42,19 +42,8 @@ function App({ contentStore, enterContent }) {
 }
 
 App.propTypes = {
-  contentStore: PropTypes.oneOfType([
-    PropTypes.number.isRequired,
-    PropTypes.shape({
-      lang: PropTypes.string.isRequired,
-      logo: PropTypes.string.isRequired,
-      nav: PropTypes.shape({
-        main: PropTypes.string.isRequired,
-        cv: PropTypes.string.isRequired,
-        me: PropTypes.string.isRequired,
-        contacts: PropTypes.string.isRequired,
-      }).isRequired,
-    }).isRequired,
-  ]).isRequired,
+  contentStore: PropTypes.oneOfType([PropTypes.number, PropTypes.object])
+    .isRequired,
   enterContent: PropTypes.func.isRequired,
 };
 

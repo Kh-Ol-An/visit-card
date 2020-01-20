@@ -52,13 +52,14 @@ const Languages = ({ enterContent }) => {
         return (
           <label className={labelClasses.join(' ')} key={multiContent.lang}>
             <input
+              className={s.input}
               type="radio"
               name="language"
               value={multiContent.lang}
               checked={lang === multiContent.lang}
               onChange={handleChange}
             />
-            <span>{multiContent.language}</span>
+            <span className={s.span}>{multiContent.language}</span>
             <div className={flagClasses.join(' ')} />
           </label>
         );

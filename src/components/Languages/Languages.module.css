@@ -50,7 +50,7 @@
   transform: translateY(0);
 }
 
-.label > input {
+.label > .input {
   display: none;
 }
 
@@ -58,7 +58,7 @@
   width: 1.375em;
   height: 1em;
   position: absolute;
-  top: 0.5625em;
+  top: 0.6875em;
   left: -1.625em;
   display: inline-block;
   background-size: contain;
@@ -90,8 +90,8 @@
   background-image: url('../../assets/images/flag/ru.gif');
 }
 
-@media (max-width: 899px) {
-  .label > span {
+@media (max-width: 800px) {
+  .label > .span {
     display: none;
   }
 }

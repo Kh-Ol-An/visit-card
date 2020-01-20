@@ -45,7 +45,7 @@
 }
 
 .nav {
-  font-size: 1.25rem; /* 20px */
+  font-size: 1.125rem; /* 18px */
   line-height: 1.5em;
   display: flex;
   align-items: center;
@@ -71,7 +71,7 @@
   color: active-color;
 }
 
-@media (max-width: 899px) {
+@media (max-width: 800px) {
   .main {
     padding: 1em 2em;
   }
@@ -107,7 +107,7 @@
     height: 0.125em;
     position: absolute;
     left: 0;
-    content: "";
+    content: '';
     display: block;
     background-color: #fff;
     transition: all 300ms ease-in;

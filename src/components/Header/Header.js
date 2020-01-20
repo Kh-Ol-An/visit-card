@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
@@ -8,21 +8,37 @@ import getContent from '../../redux/content/contentSelectors';
 import Languages from '../Languages/Languages';
 import s from './Header.module.css';
 
-const Header = ({ content }) => {
+const Header = ({ contentStore, checkedHeader, onCheckedHeader }) => {
+  const [checked, setChecked] = useState(checkedHeader);
+
+  function handleChecked() {
+    setChecked(!checked);
+    onCheckedHeader(!checked);
+  }
+
+  useEffect(() => {
+    !checkedHeader && setChecked(checkedHeader);
+  }, [checkedHeader]);
+
   return (
     <header className={s.main}>
       <Helmet>
-        <html lang={content.lang} />
+        <html lang={contentStore.lang} />
       </Helmet>
 
       <Languages />
 
       <Link className={s.logo} to="/">
-        {content.logo}
+        {contentStore.logo}
       </Link>
 
       <label className={s.navContainer}>
-        <input className={s.check} type="checkbox" />
+        <input
+          className={s.check}
+          type="checkbox"
+          checked={checked}
+          onChange={handleChecked}
+        />
         <div className={s.lineWrap}>
           <span className={s.line1} />
           <span className={s.line2} />
@@ -36,7 +52,7 @@ const Header = ({ content }) => {
               exact
               to="/"
             >
-              {content.nav.main}
+              {contentStore.nav.main}
             </NavLink>
           </li>
           <li className={s.navItem}>
@@ -46,7 +62,7 @@ const Header = ({ content }) => {
               exact
               to="/cv"
             >
-              {content.nav.cv}
+              {contentStore.nav.cv}
             </NavLink>
           </li>
           <li className={s.navItem}>
@@ -56,7 +72,7 @@ const Header = ({ content }) => {
               exact
               to="/contacts"
             >
-              {content.nav.contacts}
+              {contentStore.nav.contacts}
             </NavLink>
           </li>
         </ul>
@@ -66,7 +82,7 @@ const Header = ({ content }) => {
 };
 
 Header.propTypes = {
-  content: PropTypes.shape({
+  contentStore: PropTypes.shape({
     lang: PropTypes.string.isRequired,
     logo: PropTypes.string.isRequired,
     nav: PropTypes.shape({
@@ -76,10 +92,12 @@ Header.propTypes = {
       contacts: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
+  checkedHeader: PropTypes.bool.isRequired,
+  onCheckedHeader: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = store => ({
-  content: getContent(store),
+  contentStore: getContent(store),
 });
 
 export default connect(mapStateToProps)(Header);

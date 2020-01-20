@@ -1,7 +1,8 @@
 @value primary-color: #03adec;
-@value secondary-color: #012065;
+@value secondary-color: #033192;
 @value active-color: #fc6213;
 
-@value primary-family: 'Baumans', cursive;
 @value logo-family: 'Salsa', cursive;
+@value primary-family: 'Andika', sans-serif;
+@value text-family: 'Podkova', serif;
 @value primary-weight: 900;

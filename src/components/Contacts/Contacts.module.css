@@ -4,9 +4,11 @@
 .main {
   height: 100vh;
   position: absolute;
-  left: 0;
+  top: 0;
   right: 0;
-  background-image: url('../../assets/images/bg/contacts-bg-img.jpg');
+  bottom: 0;
+  left: 0;
+  background-image: url("../../assets/images/bg/contacts-bg-img.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -79,14 +81,10 @@
   color: #005884;
 }
 
-@media (max-width: 899px) {
+@media (max-width: 767px) {
   .main {
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.7),
-        rgba(0, 0, 0, 0.7)
-      ),
-      url('../../assets/images/bg/contacts-bg-img.jpg');
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("../../assets/images/bg/contacts-bg-img.jpg");
   }
 
   .skype {
@@ -106,7 +104,7 @@
   }
 }
 
-@media (max-width: 499px) {
+@media (max-width: 639px) {
   .phone,
   .telegram,
   .viber,
@@ -151,7 +149,24 @@
   }
 }
 
-@media (max-width: 399px) {
+@media (max-height: 639px) {
+  .telegram,
+  .mail {
+    top: 40%;
+  }
+
+  .viber,
+  .github {
+    top: 60%;
+  }
+
+  .whatsapp,
+  .linkedin {
+    top: 80%;
+  }
+}
+
+@media (max-width: 413px) {
   .phone,
   .telegram,
   .viber,
@@ -164,7 +179,7 @@
   }
 }
 
-@media (max-width: 299px) {
+@media (max-width: 359px) {
   .phone,
   .telegram,
   .viber,

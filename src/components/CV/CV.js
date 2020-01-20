@@ -10,7 +10,7 @@ import cvRU from '../../assets/images/cv/cv-ru.jpg';
 import tablet from '../../assets/images/bg/cv-bg-img.png';
 import s from './CV.module.css';
 
-const CV = ({ content }) => {
+const CV = ({ contentStore }) => {
   const [cv, setCv] = useState(null);
   const [cvWrapClasses, setCvWrapClasses] = useState([s.cvWrap]);
   const [tabletWrapClasses, setTabletWrapClasses] = useState([s.tabletWrap]);
@@ -23,12 +23,27 @@ const CV = ({ content }) => {
       return;
     const cvWrapArray = cvWrapClasses.split(' ');
     cvWrapArray.pop();
-    setCvWrapClasses(cvWrapArray);
+    setTimeout(() => {
+      cvWrapArray.pop();
+      setCvWrapClasses(cvWrapArray);
+    }, 700);
+    setCvWrapClasses(cvWrapArray.join(' '));
 
     const tabletWrapArray = tabletWrapClasses.split(' ');
-    tabletWrapArray.pop();
-    setTabletWrapClasses(tabletWrapArray);
+    setTimeout(() => {
+      tabletWrapArray.pop();
+      setTabletWrapClasses(tabletWrapArray);
+    }, 700);
   };
+
+  function handleDisactive({ target, currentTarget }) {
+    if (
+      target === currentTarget &&
+      typeof cvWrapClasses === 'string' &&
+      typeof tabletWrapClasses === 'string'
+    )
+      disactive();
+  }
 
   function handleKeyPress({ keyCode }) {
     if (keyCode !== 27) return;
@@ -42,6 +57,7 @@ const CV = ({ content }) => {
     )
       return;
     const cvWrapArray = cvWrapClasses;
+    cvWrapArray.push(s.cvWrapActiveZIndex);
     cvWrapArray.push(s.cvWrapActive);
     const cvWrapString = cvWrapArray.join(' ');
     setCvWrapClasses(cvWrapString);
@@ -52,25 +68,39 @@ const CV = ({ content }) => {
     setTabletWrapClasses(tabletWrapString);
   }
 
-  function handleDisactive({ target, currentTarget }) {
-    if (
-      target === currentTarget &&
-      typeof cvWrapClasses === 'string' &&
-      typeof tabletWrapClasses === 'string'
-    ) {
-      disactive();
-    }
+  useEffect(() => {
+    contentStore.lang === 'en' && setCv(cvEN);
+    contentStore.lang === 'ua' && setCv(cvUA);
+    contentStore.lang === 'ru' && setCv(cvRU);
+  }, [contentStore.lang]);
+
+  const [checkedHeader, setCheckedHeader] = useState(false);
+
+  function handleDisactiveChecked({ target }) {
+    !target.className.includes('Header') &&
+      !target.className.includes('Languages') &&
+      checkedHeader &&
+      setCheckedHeader(false);
   }
 
-  useEffect(() => {
-    content.lang === 'en' && setCv(cvEN);
-    content.lang === 'ua' && setCv(cvUA);
-    content.lang === 'ru' && setCv(cvRU);
-  }, [content.lang]);
+  function handleKeyPressChecked({ keyCode }) {
+    if (keyCode !== 27) return;
+    checkedHeader && setCheckedHeader(false);
+  }
+
+  function onCheckedHeader(checked) {
+    setCheckedHeader(checked);
+  }
 
   return (
-    <div className={s.main}>
-      <Header />
+    <div
+      className={s.main}
+      role="button"
+      tabIndex="0"
+      onClick={handleDisactiveChecked}
+      onKeyDown={handleKeyPressChecked}
+    >
+      <Header checkedHeader={checkedHeader} onCheckedHeader={onCheckedHeader} />
 
       <div
         className={s.tabletContainer}
@@ -80,8 +110,8 @@ const CV = ({ content }) => {
         onKeyDown={handleKeyPress}
       >
         <div className={tabletWrapClasses}>
-          <button className={s.btn} type="button" onClick={handleActive} />
           <img className={s.tablet} src={tablet} alt="tablet" width="1920" />
+          <button className={s.btn} type="button" onClick={handleActive} />
           <div className={cvWrapClasses}>
             <img className={s.cv} src={cv} alt="resume" width="1414" />
           </div>
@@ -92,13 +122,13 @@ const CV = ({ content }) => {
 };
 
 CV.propTypes = {
-  content: PropTypes.shape({
+  contentStore: PropTypes.shape({
     lang: PropTypes.string.isRequired,
   }).isRequired,
 };
 
 const mapStateToProps = store => ({
-  content: getContent(store),
+  contentStore: getContent(store),
 });
 
 export default connect(mapStateToProps)(CV);
