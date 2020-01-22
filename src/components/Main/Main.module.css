@@ -13,93 +13,282 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-image: url("../../assets/images/bg/main-bg-img1.jpg");
-  background-position: center;
-  background-repeat: no-repeat; */
-  /* background-size: contain; */
-  /* background-size: cover; */
-  /* background-size: 100% auto;
-  background-size: 100% 100%; */
   background-color: #000;
   overflow-y: auto;
 }
 
-.wrapScreen {
-  width: 80%;
-  /* height: calc(100% - 33.33%); */
-  /* background-image: url("../../assets/images/bg/main-bg-img.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-size: cover;
-  background-size: 100% 100%; */
+.wrapMobile {
+  width: 95%;
+  height: 85%;
+  position: absolute;
+  top: 4em;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-items: center;
+  opacity: 0;
 }
 
-.innerScreen {
+.textMobile,
+.psMobile {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.1em;
+  font-family: text-family;
+  background: linear-gradient(to left, secondary-color 0%, primary-color 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: justify;
+}
+
+.widthLaptop {
+  width: 80%;
+}
+
+.heightLaptop {
   height: 0;
   padding-top: 66.66%;
-  /* padding-top: 35%; */
   position: relative;
   background-image: url("../../assets/images/bg/main-bg-img.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  /* background-size: contain; */
   background-size: cover;
-  /* background-size: 100% 100%; */
 }
 
-.screen {
-  width: 60.7%;
-  height: 60%;
+.wrapScreen {
+  width: 63.2%;
+  height: 63.5%;
   position: absolute;
   top: 13.5%;
   left: 17%;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  border-radius: 0.6em;
+  align-items: center;
+  border-radius: 0.4em;
   border: 0.125em solid primary-color;
-  background-color: #000;
-  padding: 1em;
-  /* margin-right: 1em; */
+  background: #000;
+  opacity: 1;
   /* background: red;
   opacity: 0.2; */
-  display: none;
-  opacity: 1;
-  /* animation: screen 10000ms; */
+  animation: screen 10000ms;
 }
 
 @keyframes screen {
   0% {
     opacity: 0;
   }
-  29% {
+
+  /* 1 */
+  30% {
     opacity: 0;
   }
-  30% {
+  31% {
     opacity: 1;
     border: none;
   }
   32% {
+    opacity: 0;
+  }
+
+  /* 2 */
+  46% {
+    opacity: 0;
+  }
+  47% {
     opacity: 1;
     border: none;
   }
-  33% {
+  48% {
     opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  41% {
-    opacity: 1;
-    border: none;
   }
   49% {
-    opacity: 0;
+    opacity: 1;
+    border: none;
   }
   50% {
     opacity: 1;
+    border: none;
   }
+  51% {
+    opacity: 0;
+  }
+
+  /* 3 */
+  59% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+    border: none;
+  }
+  61% {
+    opacity: 1;
+    border: none;
+  }
+  62% {
+    opacity: 0;
+  }
+  63% {
+    opacity: 1;
+    border: none;
+  }
+  64% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 1;
+    border: none;
+  }
+  68% {
+    opacity: 1;
+    border: none;
+  }
+  69% {
+    opacity: 0;
+  }
+
+  /* 4 */
+  83% {
+    opacity: 0;
+  }
+  84% {
+    opacity: 1;
+    border: none;
+  }
+  86% {
+    opacity: 1;
+    border: none;
+  }
+  87% {
+    opacity: 0;
+  }
+  88% {
+    opacity: 1;
+    border: none;
+  }
+
+  /* 5 */
+  92% {
+    opacity: 1;
+    border: none;
+  }
+  93% {
+    opacity: 0;
+  }
+  96% {
+    opacity: 0;
+  }
+  97% {
+    opacity: 1;
+    border: none;
+  }
+  98% {
+    opacity: 1;
+    border: none;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+.topLeft,
+.topRight,
+.bottomLeft,
+.bottomRight,
+.leftTop,
+.rightTop,
+.leftBottom,
+.rightBottom {
+  position: absolute;
+  background: #000;
+}
+
+.topLeft,
+.topRight,
+.bottomLeft,
+.bottomRight {
+  width: 0%;
+  height: 0.5em;
+  animation: width 3000ms ease-in 10000ms;
+}
+
+@keyframes width {
+  0% {
+    width: 50%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+.topLeft {
+  top: -0.25em;
+  left: 0;
+}
+
+.topRight {
+  top: -0.25em;
+  right: 0;
+}
+
+.bottomLeft {
+  bottom: -0.25em;
+  left: 0;
+}
+
+.bottomRight {
+  bottom: -0.25em;
+  right: 0;
+}
+
+.leftTop,
+.rightTop,
+.leftBottom,
+.rightBottom {
+  width: 0.5em;
+  height: 0%;
+  animation: height 4000ms ease-in 10000ms;
+}
+
+@keyframes height {
+  0% {
+    height: 50%;
+  }
+  75% {
+    height: 50%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+.leftTop {
+  left: -0.25em;
+  top: 50%;
+}
+
+.rightTop {
+  right: -0.25em;
+  top: 50%;
+}
+
+.leftBottom {
+  left: -0.25em;
+  bottom: 50%;
+}
+
+.rightBottom {
+  right: -0.25em;
+  bottom: 50%;
 }
 
 .text,
@@ -111,29 +300,95 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: justify;
-  display: block;
-  /* font-weight: 900; */
-  animation: text 5000ms ease-in 1000ms;
+  margin: 1em;
+  opacity: 1;
+  animation: text 16000ms ease-in;
 }
 
 @keyframes text {
   0% {
-    display: none;
+    opacity: 0;
   }
-  30% {
-    display: block;
+  93% {
+    opacity: 0;
   }
-  35% {
-    display: none;
-  }
-  50% {
-    display: block;
+  100% {
+    opacity: 1;
   }
 }
 
-@media (max-width: 1920px) {
+@media (max-width: 1679px) {
   .text,
   .ps {
-    font-size: 1.625rem; /* 26px */
+    font-size: 1.25rem; /* 20px */
+  }
+}
+
+@media (max-width: 1279px) {
+  .text,
+  .ps {
+    font-size: 1rem; /* 16px */
+  }
+}
+
+@media (max-width: 1023px) {
+  .text,
+  .ps {
+    font-size: 0.75rem; /* 12px */
+  }
+}
+
+@media (max-width: 767px) {
+  .main {
+    overflow: hidden;
+  }
+
+  .heightLaptop {
+    opacity: 0;
+    transform: scale(7);
+    animation: scale 15000ms ease-in;
+  }
+
+  @keyframes scale {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    94% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    99% {
+      transform: scale(7);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(7);
+      opacity: 0;
+    }
+  }
+
+  .wrapMobile {
+    opacity: 1;
+    animation: opacity 16000ms ease-in;
+  }
+
+  @keyframes opacity {
+    0% {
+      opacity: 0;
+    }
+    99% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 359px) {
+  .textMobile,
+  .psMobile {
+    font-size: 1rem; /* 16px */
   }
 }

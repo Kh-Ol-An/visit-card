@@ -34,10 +34,22 @@ const Main = ({ contentStore }) => {
       onKeyDown={handleKeyPressChecked}
     >
       <Header checkedHeader={checkedHeader} onCheckedHeader={onCheckedHeader} />
+      <div className={s.wrapMobile}>
+        <p className={s.textMobile}>{contentStore.text}</p>
+        <p className={s.psMobile}>{contentStore.ps}</p>
+      </div>
 
-      <div className={s.wrapScreen}>
-        <div className={s.innerScreen}>
-          <div className={s.screen}>
+      <div className={s.widthLaptop}>
+        <div className={s.heightLaptop}>
+          <div className={s.wrapScreen}>
+            <div className={s.topLeft} />
+            <div className={s.topRight} />
+            <div className={s.bottomLeft} />
+            <div className={s.bottomRight} />
+            <div className={s.leftTop} />
+            <div className={s.rightTop} />
+            <div className={s.leftBottom} />
+            <div className={s.rightBottom} />
             <p className={s.text}>{contentStore.text}</p>
             <p className={s.ps}>{contentStore.ps}</p>
           </div>

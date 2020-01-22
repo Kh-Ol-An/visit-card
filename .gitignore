@@ -49,7 +49,6 @@ dlldata.c
 BenchmarkDotNet.Artifacts/
 
 # .NET Core
-project.lock.json
 project.fragment.lock.json
 artifacts/
 **/Properties/launchSettings.json
@@ -340,6 +339,12 @@ ASALocalRun/
 
 # production
 /build
+
+# local
+project.lock.json
+surge.crt
+surge.key
+surge.pem
 
 # misc
 .DS_Store

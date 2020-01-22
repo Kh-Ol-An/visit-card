@@ -5,7 +5,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url("../../assets/images/bg/cv-bg-img2.jpg");
+  background-image: url('../../assets/images/bg/cv-bg-img2.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,13 +18,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 3em;
+  align-items: flex-start;
+  /* padding-top: 3em; */
 }
 
 .tabletWrap {
   width: 90%;
   position: relative;
-  top: 4em;
+  top: 7em;
   margin-bottom: 4em;
   overflow: hidden;
   transition: transform 700ms ease-in;
@@ -99,8 +100,8 @@
   }
 }
 
-@media (max-width: 1365px) {
+/* @media (max-width: 1365px) {
   .tabletContainer {
     align-items: flex-start;
   }
-}
+} */

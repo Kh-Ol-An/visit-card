@@ -25,7 +25,7 @@
     "lint:fix": "eslint src/**/*.js --fix",
     "lint:format": "prettier src/**/*.{js,css,json} --write",
     "predeploy": "npm run build",
-    "deploy": "surge -p build -d kholan.tech"
+    "deploy": "surge -p build surge ssl --pem ./surge.pem -d http://kholan.tech"
   },
   "eslintConfig": {
     "extends": "react-app"
