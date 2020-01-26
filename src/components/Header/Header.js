@@ -8,7 +8,7 @@ import getContent from '../../redux/content/contentSelectors';
 import Languages from '../Languages/Languages';
 import s from './Header.module.css';
 
-const Header = ({ contentStore, checkedHeader, onCheckedHeader }) => {
+const Header = ({ style, contentStore, checkedHeader, onCheckedHeader }) => {
   const [checked, setChecked] = useState(checkedHeader);
 
   function handleChecked() {
@@ -20,15 +20,18 @@ const Header = ({ contentStore, checkedHeader, onCheckedHeader }) => {
     !checkedHeader && setChecked(checkedHeader);
   }, [checkedHeader]);
 
+  const mainClasses = [s.main];
+  mainClasses.push(style);
+
   return (
-    <header className={s.main}>
+    <header className={mainClasses.join(' ')}>
       <Helmet>
         <html lang={contentStore.lang} />
       </Helmet>
 
       <Languages />
 
-      <Link className={s.logo} to="/">
+      <Link className={s.logo} to="/" title={contentStore.title.main}>
         {contentStore.logo}
       </Link>
 
@@ -51,6 +54,7 @@ const Header = ({ contentStore, checkedHeader, onCheckedHeader }) => {
               activeClassName={s.activeLink}
               exact
               to="/"
+              title={contentStore.title.main}
             >
               {contentStore.nav.main}
             </NavLink>
@@ -61,6 +65,7 @@ const Header = ({ contentStore, checkedHeader, onCheckedHeader }) => {
               activeClassName={s.activeLink}
               exact
               to="/cv"
+              title={contentStore.title.cv}
             >
               {contentStore.nav.cv}
             </NavLink>
@@ -71,6 +76,7 @@ const Header = ({ contentStore, checkedHeader, onCheckedHeader }) => {
               activeClassName={s.activeLink}
               exact
               to="/contacts"
+              title={contentStore.title.contacts}
             >
               {contentStore.nav.contacts}
             </NavLink>
@@ -81,11 +87,22 @@ const Header = ({ contentStore, checkedHeader, onCheckedHeader }) => {
   );
 };
 
+Header.defaultProps = {
+  style: null,
+};
+
 Header.propTypes = {
+  style: PropTypes.string,
   contentStore: PropTypes.shape({
     lang: PropTypes.string.isRequired,
     logo: PropTypes.string.isRequired,
     nav: PropTypes.shape({
+      main: PropTypes.string.isRequired,
+      cv: PropTypes.string.isRequired,
+      me: PropTypes.string.isRequired,
+      contacts: PropTypes.string.isRequired,
+    }).isRequired,
+    title: PropTypes.shape({
       main: PropTypes.string.isRequired,
       cv: PropTypes.string.isRequired,
       me: PropTypes.string.isRequired,

@@ -17,6 +17,23 @@
   overflow-y: auto;
 }
 
+.header {
+  transform-origin: top;
+  animation: translate 5000ms;
+}
+
+@keyframes translate {
+  0% {
+    transform: translateY(-100%);
+  }
+  95% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
 .wrapMobile {
   width: 95%;
   height: 85%;
@@ -57,11 +74,11 @@
 }
 
 .wrapScreen {
-  width: 63.2%;
-  height: 63.5%;
+  width: 64%;
+  height: 64%;
   position: absolute;
-  top: 13.5%;
-  left: 17%;
+  top: 13%;
+  left: 16.5%;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -70,8 +87,8 @@
   border: 0.125em solid primary-color;
   background: #000;
   opacity: 1;
-  /* background: red;
-  opacity: 0.2; */
+  /* background: red; */
+  /* opacity: 0.2; */
   animation: screen 10000ms;
 }
 
@@ -303,7 +320,15 @@
   margin: 1em;
   opacity: 1;
   animation: text 16000ms ease-in;
+  /* animation: text 1000ms ease-in; */
 }
+
+/* .ps {
+  width: 105ch;
+  white-space: nowrap;
+  border-right: 2px solid primary-color;
+  animation: text 100000ms steps(105), cursor 750ms step-start infinite;
+} */
 
 @keyframes text {
   0% {
@@ -315,7 +340,24 @@
   100% {
     opacity: 1;
   }
+
+  /* ===================== */
+  /* from {
+    width: 0;
+  } */
 }
+
+/* @keyframes cursor {
+  0% {
+    border-color: primary-color;
+  }
+  50% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: primary-color;
+  }
+} */
 
 @media (max-width: 1679px) {
   .text,
@@ -332,6 +374,11 @@
 }
 
 @media (max-width: 1023px) {
+  .wrapScreen {
+    border-radius: 0.2em;
+    border: 0.0625em solid primary-color;
+  }
+
   .text,
   .ps {
     font-size: 0.75rem; /* 12px */
@@ -341,6 +388,23 @@
 @media (max-width: 767px) {
   .main {
     overflow: hidden;
+  }
+
+  .wrapMobile {
+    opacity: 1;
+    animation: opacity 16000ms ease-in;
+  }
+
+  @keyframes opacity {
+    0% {
+      opacity: 0;
+    }
+    99% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   .heightLaptop {
@@ -368,21 +432,8 @@
     }
   }
 
-  .wrapMobile {
-    opacity: 1;
-    animation: opacity 16000ms ease-in;
-  }
-
-  @keyframes opacity {
-    0% {
-      opacity: 0;
-    }
-    99% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  .wrapScreen {
+    height: 64.2%;
   }
 }
 

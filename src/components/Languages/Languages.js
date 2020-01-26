@@ -50,7 +50,11 @@ const Languages = ({ enterContent }) => {
           counter++;
         flagClasses.splice(1, 1, s[multiContent.lang]);
         return (
-          <label className={labelClasses.join(' ')} key={multiContent.lang}>
+          <label
+            className={labelClasses.join(' ')}
+            key={multiContent.lang}
+            title={multiContent.title.language}
+          >
             <input
               className={s.input}
               type="radio"

@@ -111,7 +111,12 @@ const CV = ({ contentStore }) => {
       >
         <div className={tabletWrapClasses}>
           <img className={s.tablet} src={tablet} alt="tablet" width="1920" />
-          <button className={s.btn} type="button" onClick={handleActive} />
+          <button
+            className={s.btn}
+            title={contentStore.title.click}
+            type="button"
+            onClick={handleActive}
+          />
           <div className={cvWrapClasses}>
             <img className={s.cv} src={cv} alt="resume" width="1414" />
           </div>
@@ -124,6 +129,9 @@ const CV = ({ contentStore }) => {
 CV.propTypes = {
   contentStore: PropTypes.shape({
     lang: PropTypes.string.isRequired,
+    title: PropTypes.shape({
+      click: PropTypes.string.isRequired,
+    }).isRequired,
   }).isRequired,
 };
 

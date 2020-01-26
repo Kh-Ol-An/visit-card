@@ -55,7 +55,7 @@ const Contacts = ({ contentStore }) => {
     >
       <Header checkedHeader={checkedHeader} onCheckedHeader={onCheckedHeader} />
 
-      <a className={s.phone} title="Telephone" href="tel:+380508899268">
+      <a className={s.phone} title={tel} href="tel:+380508899268">
         <img src={phone} alt="phone-icon" width="50" />
         {tel}
       </a>
@@ -123,7 +123,7 @@ const Contacts = ({ contentStore }) => {
       <a
         className={s.linkedin}
         title="Linkedin"
-        href="https://www.linkedin.com/in/kh-ol-an/"
+        href="https://linkedin.com/in/kh-ol-an/"
         target="_blank"
         rel="noopener noreferrer"
       >
