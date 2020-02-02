@@ -9,6 +9,7 @@
       "me": "<Who am I? />",
       "contacts": "<Contacts />"
     },
+    "download_cv": "Download CV",
     "title": {
       "main": "to <Main />",
       "cv": "to <CV />",
@@ -16,7 +17,7 @@
       "contacts": "to <Contacts />",
       "language": "Select your language",
       "click": "Press",
-      "download": "Download"
+      "download": "Download CV"
     },
     "text": "Hello! My name is Oleg. I am results-oriented software developer and research professional. I make it my goal to create software with the user in mind, creating applications with a useable and intuitive user interface experience. I also understand the importance of creating highly readable and easily maintainable source code. I am constantly striving to learn new technologies and look to ways to better myself in this rapidly  changing industry.",
     "ps": "P.S. If you find a bug or you have ideas on how to do it better, please contact me in any convenient way."
@@ -31,6 +32,7 @@
       "me": "<Хто я? />",
       "contacts": "<Контакти />"
     },
+    "download_cv": "Завантажити резюме",
     "title": {
       "main": "Перейти на <Головну />",
       "cv": "Перейти до <Резюме />",
@@ -38,7 +40,7 @@
       "contacts": "Перейти до <Контактiв />",
       "language": "Виберіть свою мову",
       "click": "Тисни",
-      "download": "Завантажити"
+      "download": "Завантажити резюме"
     },
     "text": "Доброго здоров'я! Мене звати Олег. Я розробник програмного забезпечення і дослідник, орієнтований на результат. Ставлю собі за мету створення програмного забезпечення з урахуванням потреб користувача, створення додатків зі зручним і інтуїтивно зрозумілим інтерфейсом. Також розумію важливість створення легко читаємого і легко підтримуваного початкового коду. Постійно прагну вивчати нові технології і шукати засоби поліпшити себе в цій швидко мінливiй галузі.",
     "ps": "Пи.Си. Якщо Ви знайшли помилку або у Вас є ідеї як зробити краще, будь ласка, зв'яжіться зі мною будь-яким зручним засобом."
@@ -53,6 +55,7 @@
       "me": "<Кто я? />",
       "contacts": "<Контакты />"
     },
+    "download_cv": "Скачать резюме",
     "title": {
       "main": "Перейти на <to Головную />",
       "cv": "Перейти к <to Резюме />",
@@ -60,7 +63,7 @@
       "contacts": "Перейти к <to Контактам />",
       "language": "Выберите свой язык",
       "click": "Жми",
-      "download": "Скачать"
+      "download": "Скачать резюме"
     },
     "text": "Здравствуйте! Меня зовут Олег. Я разработчик программного обеспечения и исследователь, ориентированный на результат. Ставлю своей целью создание программного обеспечения с учетом потребностей пользователя, создание приложений с удобным и интуитивно понятным интерфейсом. Также понимаю важность создания легко читаемого и легко поддерживаемого исходного кода. Постоянно стремлюсь изучать новые технологии и искать способы улучшить себя в этой быстро меняющейся отрасли.",
     "ps": "Пы.Сы. Если Вы нашли ошибку или у Вас есть идеи как сделать лучше, пожалуйста, свяжитесь со мной любым удобным способом."

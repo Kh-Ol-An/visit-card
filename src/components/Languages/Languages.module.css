@@ -5,8 +5,8 @@
 
 .langWrap {
   position: fixed;
-  top: 0.875em;
-  right: 1em;
+  top: 1.4em;
+  right: 1.6em;
   z-index: 2;
 }
 
@@ -15,12 +15,13 @@
 }
 
 .label {
+  font-size: 1.6rem; /* 16px */
   position: absolute;
   top: 0;
   right: 0;
   color: primary-color;
   font-family: primary-family;
-  padding: 10px 0;
+  padding: 0.625em 0;
   cursor: pointer;
 }
 
@@ -67,27 +68,27 @@
 }
 
 .en {
-  background-image: url('../../assets/images/flag/uk.png');
+  background-image: url("../../assets/images/flag/uk.png");
 }
 
 .langWrap:hover .en {
-  background-image: url('../../assets/images/flag/uk.gif');
+  background-image: url("../../assets/images/flag/uk.gif");
 }
 
 .ua {
-  background-image: url('../../assets/images/flag/ua.png');
+  background-image: url("../../assets/images/flag/ua.png");
 }
 
 .langWrap:hover .ua {
-  background-image: url('../../assets/images/flag/ua.gif');
+  background-image: url("../../assets/images/flag/ua.gif");
 }
 
 .ru {
-  background-image: url('../../assets/images/flag/ru.png');
+  background-image: url("../../assets/images/flag/ru.png");
 }
 
 .langWrap:hover .ru {
-  background-image: url('../../assets/images/flag/ru.gif');
+  background-image: url("../../assets/images/flag/ru.gif");
 }
 
 @media (max-width: 800px) {

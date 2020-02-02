@@ -8,14 +8,14 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: url('../../assets/images/bg/contacts-bg-img.jpg');
+  background-image: url("../../assets/images/bg/contacts-bg-img.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .main img {
-  margin-right: 0.625em;
+  margin-right: 1em;
 }
 
 .phone,
@@ -26,6 +26,7 @@
 .mail,
 .github,
 .linkedin {
+  font-size: 1.6rem; /* 16px */
   position: absolute;
   display: flex;
   justify-content: center;
@@ -83,12 +84,8 @@
 
 @media (max-width: 767px) {
   .main {
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.7),
-        rgba(0, 0, 0, 0.7)
-      ),
-      url('../../assets/images/bg/contacts-bg-img.jpg');
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("../../assets/images/bg/contacts-bg-img.jpg");
   }
 
   .skype {

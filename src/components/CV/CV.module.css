@@ -19,48 +19,48 @@
 }
 
 .downloadWrap {
-  position: relative;
-  top: 5em;
   width: fit-content;
-  height: 3.125em;
+  height: 5em;
+  position: relative;
+  top: 8em;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  overflow: hidden;
   font-family: primary-family;
   font-weight: primary-weight;
-  transition: 0.5s;
+  /* overflow: hidden; */
+  transition: 500ms;
 }
 
 .downloadSpan {
-  font-size: 20px;
-  position: absolute;
-  color: active-color;
-  text-align: center;
+  font-size: 2rem; /* 20px */
   width: fit-content;
+  position: absolute;
   padding: 0 1em;
   font-family: primary-family;
   font-weight: primary-weight;
-  overflow: hidden;
+  color: active-color;
+  text-align: center;
+  /* overflow: hidden; */
 }
 
 .downloadLink {
-  font-size: 20px;
+  font-size: 2rem; /* 20px */
+  width: fit-content;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: fit-content;
-  height: 100%;
   padding: 0 1em;
+  background: rgba(0, 0, 0, 0.7);
   font-family: primary-family;
   font-weight: primary-weight;
-  background: rgba(0, 0, 0, 0.7);
+  color: primary-color;
   -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
   mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
   -webkit-mask-size: 2300% 100%;
   mask-size: 2300% 100%;
-  color: primary-color;
   cursor: pointer;
   animation: ani2 700ms steps(22) forwards;
 }
@@ -105,8 +105,8 @@
 .tabletWrap {
   width: 90%;
   position: relative;
-  top: 6em;
-  margin-bottom: 4em;
+  top: 9.6em;
+  margin-bottom: 6.4em;
   overflow: hidden;
   transition: transform 700ms ease-in;
 }
@@ -155,7 +155,7 @@
   top: 0%;
   left: 0%;
   transform: rotate3D(0, 0, 0, 0deg);
-  margin-bottom: 2em;
+  margin-bottom: 3.2em;
 }
 
 .link {

@@ -12,13 +12,13 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 1em 10em 1em 2em;
+  padding: 1.6em 16em 1.6em 3.2em;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 100;
 }
 
 .logo {
-  font-size: 1.875rem; /* 30px */
+  font-size: 3rem; /* 30px */
   line-height: 1.17em;
   background: linear-gradient(to right, secondary-color 0%, primary-color 100%);
   background-clip: text;
@@ -35,17 +35,17 @@
 }
 
 .lineWrap {
-  width: 1.875em;
-  height: 1.25em;
+  width: 3em;
+  height: 2em;
   position: relative;
   display: none;
-  margin-top: 0.3125em;
+  margin-top: 0.5em;
   cursor: pointer;
   z-index: 1;
 }
 
 .nav {
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.8rem; /* 18px */
   line-height: 1.5em;
   display: flex;
   align-items: center;
@@ -55,7 +55,7 @@
 }
 
 .navItem:not(:last-child) {
-  margin-right: 3em;
+  margin-right: 4.8em;
 }
 
 .link {
@@ -73,7 +73,7 @@
 
 @media (max-width: 800px) {
   .main {
-    padding: 1em 2em;
+    padding: 1.6em 3.2em;
   }
 
   .logo {
@@ -104,7 +104,7 @@
   .line2::before,
   .line3::before {
     width: 100%;
-    height: 0.125em;
+    height: 0.2em;
     position: absolute;
     left: 0;
     content: '';
@@ -139,7 +139,7 @@
   }
 
   .nav {
-    width: 7.5em;
+    width: 12em;
     height: 0;
     flex-flow: column;
     align-items: flex-start;

@@ -119,7 +119,7 @@ const CV = ({ contentStore }) => {
       <Header checkedHeader={checkedHeader} onCheckedHeader={onCheckedHeader} />
 
       <div className={s.downloadWrap}>
-        <span className={s.downloadSpan}>Download</span>
+        <span className={s.downloadSpan}>{contentStore.download_cv}</span>
         <a
           className={s.downloadLink}
           title={contentStore.title.download}
@@ -127,7 +127,7 @@ const CV = ({ contentStore }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Download
+          {contentStore.download_cv}
         </a>
       </div>
 
@@ -166,6 +166,7 @@ const CV = ({ contentStore }) => {
 CV.propTypes = {
   contentStore: PropTypes.shape({
     lang: PropTypes.string.isRequired,
+    download_cv: PropTypes.string.isRequired,
     title: PropTypes.shape({
       click: PropTypes.string.isRequired,
       download: PropTypes.string.isRequired,

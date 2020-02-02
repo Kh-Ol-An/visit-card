@@ -39,7 +39,7 @@
   width: 95%;
   height: 85%;
   position: absolute;
-  top: 4em;
+  top: 6.4em;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -51,7 +51,7 @@
 
 .textMobile,
 .psMobile {
-  font-size: 1.25rem; /* 20px */
+  font-size: 2rem; /* 20px */
   line-height: 1.1em;
   font-family: text-family;
   background: linear-gradient(to left, secondary-color 0%, primary-color 100%);
@@ -68,7 +68,7 @@
   height: 0;
   padding-top: 66.66%;
   position: relative;
-  background-image: url('../../assets/images/bg/main-bg-img.jpg');
+  background-image: url("../../assets/images/bg/main-bg-img.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -84,8 +84,8 @@
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
-  border-radius: 0.4em;
-  border: 0.125em solid primary-color;
+  border-radius: 0.6em;
+  border: 0.2em solid primary-color;
   background: #000;
   opacity: 1;
   animation: screen 10000ms;
@@ -230,7 +230,7 @@
 .bottomLeft,
 .bottomRight {
   width: 0%;
-  height: 0.5em;
+  height: 0.6em;
   animation: width 3000ms ease-in 10000ms;
 }
 
@@ -247,22 +247,22 @@
 }
 
 .topLeft {
-  top: -0.25em;
+  top: -0.3em;
   left: 0;
 }
 
 .topRight {
-  top: -0.25em;
+  top: -0.3em;
   right: 0;
 }
 
 .bottomLeft {
-  bottom: -0.25em;
+  bottom: -0.3em;
   left: 0;
 }
 
 .bottomRight {
-  bottom: -0.25em;
+  bottom: -0.3em;
   right: 0;
 }
 
@@ -270,7 +270,7 @@
 .rightTop,
 .leftBottom,
 .rightBottom {
-  width: 0.5em;
+  width: 0.3em;
   height: 0%;
   animation: height 4000ms ease-in 10000ms;
 }
@@ -288,28 +288,28 @@
 }
 
 .leftTop {
-  left: -0.25em;
+  left: -0.3em;
   top: 50%;
 }
 
 .rightTop {
-  right: -0.25em;
+  right: -0.3em;
   top: 50%;
 }
 
 .leftBottom {
-  left: -0.25em;
+  left: -0.3em;
   bottom: 50%;
 }
 
 .rightBottom {
-  right: -0.25em;
+  right: -0.3em;
   bottom: 50%;
 }
 
 .text,
 .ps {
-  font-size: 1.625rem; /* 26px */
+  font-size: 2.6rem; /* 26px */
   line-height: 1.1em;
   font-family: text-family;
   background: linear-gradient(to left, secondary-color 0%, primary-color 100%);
@@ -336,26 +336,26 @@
 @media (max-width: 1679px) {
   .text,
   .ps {
-    font-size: 1.25rem; /* 20px */
+    font-size: 2rem; /* 20px */
   }
 }
 
 @media (max-width: 1279px) {
   .text,
   .ps {
-    font-size: 1rem; /* 16px */
+    font-size: 1.6rem; /* 16px */
   }
 }
 
 @media (max-width: 1023px) {
   .wrapScreen {
-    border-radius: 0.2em;
-    border: 0.0625em solid primary-color;
+    border-radius: 0.3em;
+    border: 0.1em solid primary-color;
   }
 
   .text,
   .ps {
-    font-size: 0.75rem; /* 12px */
+    font-size: 1.2rem; /* 12px */
   }
 }
 
@@ -414,6 +414,6 @@
 @media (max-width: 359px) {
   .textMobile,
   .psMobile {
-    font-size: 1rem; /* 16px */
+    font-size: 1.6rem; /* 16px */
   }
 }
