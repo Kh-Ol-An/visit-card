@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-// import Typed from 'react-typed';
 import PropTypes from 'prop-types';
 
 import getContent from '../../redux/content/contentSelectors';
@@ -58,17 +57,6 @@ const Main = ({ contentStore }) => {
             <div className={s.rightBottom} />
             <p className={s.text}>{contentStore.text}</p>
             <p className={s.ps}>{contentStore.ps}</p>
-            {/* <Typed
-              className={s.text}
-              strings={[contentStore.text]}
-              typeSpeed={60}
-              backSpeed={50}
-            />
-            <Typed
-              className={s.ps}
-              strings={[contentStore.ps]}
-              typeSpeed={60}
-            /> */}
           </div>
         </div>
       </div>

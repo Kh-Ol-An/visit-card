@@ -64,7 +64,7 @@ const Languages = ({ enterContent }) => {
               onChange={handleChange}
             />
             <span className={s.span}>{multiContent.language}</span>
-            <div className={flagClasses.join(' ')} />
+            <span className={flagClasses.join(' ')} />
           </label>
         );
       })}

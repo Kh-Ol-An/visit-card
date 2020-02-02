@@ -88,8 +88,6 @@
   border: 0.125em solid primary-color;
   background: #000;
   opacity: 1;
-  /* background: red; */
-  /* opacity: 0.2; */
   animation: screen 10000ms;
 }
 
@@ -321,15 +319,7 @@
   margin: 1em;
   opacity: 1;
   animation: text 16000ms ease-in;
-  /* animation: text 1000ms ease-in; */
 }
-
-/* .ps {
-  width: 105ch;
-  white-space: nowrap;
-  border-right: 2px solid primary-color;
-  animation: text 100000ms steps(105), cursor 750ms step-start infinite;
-} */
 
 @keyframes text {
   0% {
@@ -341,24 +331,7 @@
   100% {
     opacity: 1;
   }
-
-  /* ===================== */
-  /* from {
-    width: 0;
-  } */
 }
-
-/* @keyframes cursor {
-  0% {
-    border-color: primary-color;
-  }
-  50% {
-    border-color: transparent;
-  }
-  100% {
-    border-color: primary-color;
-  }
-} */
 
 @media (max-width: 1679px) {
   .text,
