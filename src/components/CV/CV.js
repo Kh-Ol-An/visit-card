@@ -113,8 +113,14 @@ const CV = ({ contentStore }) => {
       className={s.main}
       role="button"
       tabIndex="0"
-      onClick={handleDisactiveChecked}
-      onKeyDown={handleKeyPressChecked}
+      onClick={({ target, currentTarget }) => {
+        handleDisactive({ target, currentTarget });
+        handleDisactiveChecked({ target, currentTarget });
+      }}
+      onKeyDown={({ keyCode }) => {
+        handleKeyPress({ keyCode });
+        handleKeyPressChecked({ keyCode });
+      }}
     >
       <Header checkedHeader={checkedHeader} onCheckedHeader={onCheckedHeader} />
 
@@ -124,39 +130,27 @@ const CV = ({ contentStore }) => {
           className={s.downloadLink}
           title={contentStore.title.download}
           href={link}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           {contentStore.download_cv}
         </a>
       </div>
 
-      <div
-        className={s.tabletContainer}
-        role="button"
-        tabIndex="0"
-        onClick={handleDisactive}
-        onKeyDown={handleKeyPress}
-      >
-        <div className={tabletWrapClasses}>
-          <img className={s.tablet} src={tablet} alt="tablet" width="1920" />
-          <button
-            className={s.btn}
-            title={contentStore.title.click}
-            type="button"
-            onClick={handleActive}
-          />
-          <div className={cvWrapClasses}>
-            <a
-              className={linkClasses}
-              title={contentStore.title.download}
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img className={s.cv} src={cv} alt="resume" width="1414" />
-            </a>
-          </div>
+      <div className={tabletWrapClasses}>
+        <img className={s.tablet} src={tablet} alt="tablet" width="1920" />
+        <button
+          className={s.btn}
+          title={contentStore.title.click}
+          type="button"
+          onClick={handleActive}
+        />
+        <div className={cvWrapClasses}>
+          <a
+            className={linkClasses}
+            title={contentStore.title.download}
+            href={link}
+          >
+            <img className={s.cv} src={cv} alt="resume" width="1414" />
+          </a>
         </div>
       </div>
     </div>

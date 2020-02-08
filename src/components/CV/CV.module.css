@@ -29,7 +29,6 @@
   margin: 0 auto;
   font-family: primary-family;
   font-weight: primary-weight;
-  /* overflow: hidden; */
   transition: 500ms;
 }
 
@@ -42,7 +41,6 @@
   font-weight: primary-weight;
   color: active-color;
   text-align: center;
-  /* overflow: hidden; */
 }
 
 .downloadLink {
@@ -93,20 +91,11 @@
   }
 }
 
-.tabletContainer {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-items: flex-start;
-}
-
 .tabletWrap {
   width: 90%;
   position: relative;
   top: 9.6em;
-  margin-bottom: 6.4em;
+  margin: 0 auto 6.4em;
   overflow: hidden;
   transition: transform 700ms ease-in;
 }
@@ -151,7 +140,7 @@
   z-index: 3;
 }
 
-.tabletContainer .cvWrapActive {
+.cvWrapActive {
   top: 0%;
   left: 0%;
   transform: rotate3D(0, 0, 0, 0deg);
