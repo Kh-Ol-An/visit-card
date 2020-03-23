@@ -54,7 +54,7 @@
   font-size: 2rem; /* 20px */
   line-height: 1.1em;
   font-family: text-family;
-  background: linear-gradient(to left, secondary-color 0%, primary-color 100%);
+  background: linear-gradient(to right, primary-color 0%, secondary-color 100%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: justify;
@@ -68,7 +68,7 @@
   height: 0;
   padding-top: 66.66%;
   position: relative;
-  background-image: url('../../assets/images/bg/main-bg-img.jpg');
+  background-image: url("../../assets/images/bg/main-bg-img.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -312,13 +312,21 @@
   font-size: 2.6rem; /* 26px */
   line-height: 1.1em;
   font-family: text-family;
-  background: linear-gradient(to left, secondary-color 0%, primary-color 100%);
+  background: linear-gradient(to right, primary-color 0%, secondary-color 100%);
   background-clip: text;
+  text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
   text-align: justify;
   margin: 1em;
   opacity: 1;
   animation: text 16000ms ease-in;
+}
+
+.psLink {
+  background: linear-gradient(to right, secondary-color 0%, primary-color 100%);
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 @keyframes text {

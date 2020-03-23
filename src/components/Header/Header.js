@@ -11,10 +11,10 @@ import s from './Header.module.css';
 const Header = ({ style, contentStore, checkedHeader, onCheckedHeader }) => {
   const [checked, setChecked] = useState(checkedHeader);
 
-  function handleChecked() {
+  const handleChecked = () => {
     setChecked(!checked);
     onCheckedHeader(!checked);
-  }
+  };
 
   useEffect(() => {
     !checkedHeader && setChecked(checkedHeader);

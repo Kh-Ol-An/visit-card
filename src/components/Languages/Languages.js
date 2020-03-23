@@ -23,11 +23,11 @@ const Languages = ({ enterContent }) => {
     );
   }
 
-  function handleChange({ target }) {
+  const handleChange = ({ target }) => {
     const { value } = target;
     setLang(value);
     localStorage.setItem('lang', value);
-  }
+  };
 
   useEffect(() => {
     setLang(localLang);

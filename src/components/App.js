@@ -18,7 +18,7 @@ const routes = [
   { path: '/contacts', Component: Contacts },
 ];
 
-function App({ contentStore, enterContent }) {
+const App = ({ contentStore, enterContent }) => {
   !contentStore && enterContent(multiContents[0]);
 
   return (
@@ -39,7 +39,7 @@ function App({ contentStore, enterContent }) {
       ))}
     </Router>
   );
-}
+};
 
 App.propTypes = {
   contentStore: PropTypes.oneOfType([PropTypes.number, PropTypes.object])

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import getContent from '../../redux/content/contentSelectors';
@@ -9,21 +10,21 @@ import s from './Main.module.css';
 const Main = ({ contentStore }) => {
   const [checkedHeader, setCheckedHeader] = useState(false);
 
-  function handleDisactiveChecked({ target }) {
+  const handleDisactiveChecked = ({ target }) => {
     !target.className.includes('Header') &&
       !target.className.includes('Languages') &&
       checkedHeader &&
       setCheckedHeader(false);
-  }
+  };
 
-  function handleKeyPressChecked({ keyCode }) {
+  const handleKeyPressChecked = ({ keyCode }) => {
     if (keyCode !== 27) return;
     checkedHeader && setCheckedHeader(false);
-  }
+  };
 
-  function onCheckedHeader(checked) {
+  const onCheckedHeader = checked => {
     setCheckedHeader(checked);
-  }
+  };
 
   return (
     <div
@@ -41,7 +42,13 @@ const Main = ({ contentStore }) => {
 
       <div className={s.wrapMobile}>
         <p className={s.textMobile}>{contentStore.text}</p>
-        <p className={s.psMobile}>{contentStore.ps}</p>
+        <div className={s.ps}>
+          <span>{contentStore.psBefor}</span>
+          <Link to="/contacts" title={contentStore.title.contacts}>
+            {contentStore.psLink}
+          </Link>
+          <span>{contentStore.psAfter}</span>
+        </div>
       </div>
 
       <div className={s.widthLaptop}>
@@ -56,7 +63,17 @@ const Main = ({ contentStore }) => {
             <div className={s.leftBottom} />
             <div className={s.rightBottom} />
             <p className={s.text}>{contentStore.text}</p>
-            <p className={s.ps}>{contentStore.ps}</p>
+            <div className={s.ps}>
+              <span>{contentStore.psBefor}</span>
+              <Link
+                className={s.psLink}
+                to="/contacts"
+                title={contentStore.title.contacts}
+              >
+                {contentStore.psLink}
+              </Link>
+              <span>{contentStore.psAfter}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -67,7 +84,10 @@ const Main = ({ contentStore }) => {
 Main.propTypes = {
   contentStore: PropTypes.shape({
     text: PropTypes.string.isRequired,
-    ps: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    psBefor: PropTypes.string.isRequired,
+    psLink: PropTypes.string.isRequired,
+    psAfter: PropTypes.string.isRequired,
   }).isRequired,
 };
 

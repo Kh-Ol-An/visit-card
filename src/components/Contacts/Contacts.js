@@ -15,7 +15,7 @@ import linkedin from '../../assets/images/icon/linkedin.png';
 import s from './Contacts.module.css';
 
 const Contacts = ({ contentStore }) => {
-  const [tel, setTel] = useState(null);
+  const [tel, setTel] = useState('');
 
   useEffect(() => {
     contentStore.lang === 'en' && setTel('Telephone');
@@ -29,21 +29,21 @@ const Contacts = ({ contentStore }) => {
 
   const [checkedHeader, setCheckedHeader] = useState(false);
 
-  function handleDisactiveChecked({ target }) {
+  const handleDisactiveChecked = ({ target }) => {
     !target.className.includes('Header') &&
       !target.className.includes('Languages') &&
       checkedHeader &&
       setCheckedHeader(false);
-  }
+  };
 
-  function handleKeyPressChecked({ keyCode }) {
+  const handleKeyPressChecked = ({ keyCode }) => {
     if (keyCode !== 27) return;
     checkedHeader && setCheckedHeader(false);
-  }
+  };
 
-  function onCheckedHeader(checked) {
+  const onCheckedHeader = checked => {
     setCheckedHeader(checked);
-  }
+  };
 
   return (
     <div

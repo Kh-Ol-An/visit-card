@@ -13,17 +13,15 @@ import s from './CV.module.css';
 const CV = ({ contentStore }) => {
   const [cv, setCv] = useState(null);
   const [link, setLink] = useState(null);
-  const [tabletWrapClasses, setTabletWrapClasses] = useState([s.tabletWrap]);
+  const [tabletWrapOverflow, setTabletWrapOverflow] = useState({});
   const [cvWrapClasses, setCvWrapClasses] = useState([s.cvWrap]);
-  const [linkClasses, setLinkClasses] = useState([s.link]);
+  const [linkActive, setLinkActive] = useState({});
 
   const disactive = () => {
-    if (typeof tabletWrapClasses !== 'string') return;
+    if (typeof cvWrapClasses !== 'string') return;
 
-    const tabletWrapArray = tabletWrapClasses.split(' ');
     setTimeout(() => {
-      tabletWrapArray.pop();
-      setTabletWrapClasses(tabletWrapArray);
+      setTabletWrapOverflow({});
     }, 700);
 
     const cvWrapArray = cvWrapClasses.split(' ');
@@ -34,30 +32,25 @@ const CV = ({ contentStore }) => {
     }, 700);
     setCvWrapClasses(cvWrapArray.join(' '));
 
-    const linkArray = linkClasses.split(' ');
     setTimeout(() => {
-      linkArray.pop();
-      setLinkClasses(linkArray);
+      setLinkActive({});
     }, 700);
   };
 
-  function handleDisactive({ target, currentTarget }) {
-    if (target === currentTarget && typeof tabletWrapClasses === 'string')
+  const handleDisactive = ({ target, currentTarget }) => {
+    if (target === currentTarget && typeof cvWrapClasses === 'string')
       disactive();
-  }
+  };
 
-  function handleKeyPress({ keyCode }) {
+  const handleKeyPress = ({ keyCode }) => {
     if (keyCode !== 27) return;
     disactive();
-  }
+  };
 
-  function handleActive() {
-    if (typeof tabletWrapClasses === 'string') return;
+  const handleActive = () => {
+    if (typeof cvWrapClasses === 'string') return;
 
-    const tabletWrapArray = tabletWrapClasses;
-    tabletWrapArray.push(s.tabletWrapActive);
-    const tabletWrapString = tabletWrapArray.join(' ');
-    setTabletWrapClasses(tabletWrapString);
+    setTabletWrapOverflow({ overflow: 'unset' });
 
     const cvWrapArray = cvWrapClasses;
     cvWrapArray.push(s.cvWrapActiveZIndex);
@@ -65,11 +58,8 @@ const CV = ({ contentStore }) => {
     const cvWrapString = cvWrapArray.join(' ');
     setCvWrapClasses(cvWrapString);
 
-    const linkArray = linkClasses;
-    linkArray.push(s.linkActive);
-    const linkString = linkArray.join(' ');
-    setLinkClasses(linkString);
-  }
+    setLinkActive({ pointerEvents: 'auto' });
+  };
 
   useEffect(() => {
     if (contentStore.lang === 'en') {
@@ -92,21 +82,21 @@ const CV = ({ contentStore }) => {
 
   const [checkedHeader, setCheckedHeader] = useState(false);
 
-  function handleDisactiveChecked({ target }) {
+  const handleDisactiveChecked = ({ target }) => {
     !target.className.includes('Header') &&
       !target.className.includes('Languages') &&
       checkedHeader &&
       setCheckedHeader(false);
-  }
+  };
 
-  function handleKeyPressChecked({ keyCode }) {
+  const handleKeyPressChecked = ({ keyCode }) => {
     if (keyCode !== 27) return;
     checkedHeader && setCheckedHeader(false);
-  }
+  };
 
-  function onCheckedHeader(checked) {
+  const onCheckedHeader = checked => {
     setCheckedHeader(checked);
-  }
+  };
 
   return (
     <div
@@ -135,7 +125,7 @@ const CV = ({ contentStore }) => {
         </a>
       </div>
 
-      <div className={tabletWrapClasses}>
+      <div className={s.tabletWrap} style={tabletWrapOverflow}>
         <img className={s.tablet} src={tablet} alt="tablet" width="1920" />
         <button
           className={s.btn}
@@ -145,7 +135,8 @@ const CV = ({ contentStore }) => {
         />
         <div className={cvWrapClasses}>
           <a
-            className={linkClasses}
+            className={s.link}
+            style={linkActive}
             title={contentStore.title.download}
             href={link}
           >
