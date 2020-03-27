@@ -68,7 +68,7 @@
   height: 0;
   padding-top: 66.66%;
   position: relative;
-  background-image: url("../../assets/images/bg/main-bg-img.jpg");
+  background-image: url('../../assets/images/bg/main-bg-img.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -323,10 +323,7 @@
 }
 
 .psLink {
-  background: linear-gradient(to right, secondary-color 0%, primary-color 100%);
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
+  font-weight: 900;
 }
 
 @keyframes text {

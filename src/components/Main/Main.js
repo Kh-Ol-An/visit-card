@@ -32,8 +32,7 @@ const Main = ({ contentStore }) => {
       role="button"
       tabIndex="0"
       onClick={handleDisactiveChecked}
-      onKeyDown={handleKeyPressChecked}
-    >
+      onKeyDown={handleKeyPressChecked}>
       <Header
         style={s.header}
         checkedHeader={checkedHeader}
@@ -44,7 +43,10 @@ const Main = ({ contentStore }) => {
         <p className={s.textMobile}>{contentStore.text}</p>
         <div className={s.ps}>
           <span>{contentStore.psBefor}</span>
-          <Link to="/contacts" title={contentStore.title.contacts}>
+          <Link
+            className={s.psLink}
+            to="/contacts"
+            title={contentStore.title.contacts}>
             {contentStore.psLink}
           </Link>
           <span>{contentStore.psAfter}</span>
@@ -68,8 +70,7 @@ const Main = ({ contentStore }) => {
               <Link
                 className={s.psLink}
                 to="/contacts"
-                title={contentStore.title.contacts}
-              >
+                title={contentStore.title.contacts}>
                 {contentStore.psLink}
               </Link>
               <span>{contentStore.psAfter}</span>

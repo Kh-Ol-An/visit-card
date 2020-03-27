@@ -1,5 +1,5 @@
 @value fonts: '../../styles/variables.css';
-@value primary-family, primary-weight from fonts;
+@value primary-family from fonts;
 
 .main {
   height: 100vh;

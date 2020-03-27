@@ -1,7 +1,7 @@
 @value colors: '../../styles/variables.css';
 @value fonts: '../../styles/variables.css';
 @value primary-color, secondary-color, active-color from colors;
-@value primary-family, logo-family, primary-weight from fonts;
+@value primary-family, logo-family from fonts;
 
 .main {
   box-sizing: border-box;
@@ -24,7 +24,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: logo-family;
-  font-weight: primary-weight;
+  font-weight: 900;
   margin-top: -0.1666em;
   z-index: 111;
   transition: all 300ms ease-in;
@@ -107,7 +107,7 @@
     height: 0.2em;
     position: absolute;
     left: 0;
-    content: '';
+    content: "";
     display: block;
     background-color: #fff;
     transition: all 300ms ease-in;
